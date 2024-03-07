@@ -3,16 +3,11 @@ import './UpdatePageCourse.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import CourseForm from '../../components/CourseForm/CourseForm';
-//import Cookies from "universal-cookie";
 
 
 
 
 const UpdatePageCourse = (props) => {
-  /*
-  const cookies = new Cookies();
-  const userObjsId = cookies.get("USER_OBJ")._id;
-  const userObjsRole = cookies.get("USER_OBJ").role; */
 
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjsRole = userObjs.role || 'default';
@@ -43,7 +38,7 @@ const UpdatePageCourse = (props) => {
       })
       .catch((err) => console.log(err));
       
-    }, [id]); // updating "CoursObj" based on "id"
+    }, [id]); 
 
 
 
@@ -79,9 +74,6 @@ const UpdatePageCourse = (props) => {
     <div className="UpdatePageCourse">
       <div className="page-top">
         <h1>Speedy courses</h1>
-         {/* <Link to={"/courses/" + id}>
-         course details
-          </Link> */}
         {
           userObjsRole === 'admin' ?
             <Link to="/admin-dashboard">
@@ -92,7 +84,7 @@ const UpdatePageCourse = (props) => {
             </Link>
         }
       </div>
-      <h4>Update your {coursObj.name} recipe</h4>
+      <h4>Update your course</h4>
       
       <div className="page-content">
       {loaded === true ? 

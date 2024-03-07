@@ -16,17 +16,24 @@
 .CourseForm .field{
   margin-bottom: 10px;
 }
+.CourseForm label{
+  font-weight: bold;
+}
 .CourseForm input[type="text"],.CourseForm input[type="number"],
 .CourseForm select{
   width: 70%;
   margin: 5px 0;
   outline: none;
+  height: 30px;
+}
+.CourseForm input.desc{
+  height: 50px;
 }
 .CourseForm input[type="submit"], .CourseForm button[type="submit"]{
   margin: 5px 0;
   width: 70%;
  padding: 8px 0;
- background-color: gray;
+ background-color: #f79623;
  outline: none;
  border: 0px;
  font-weight: bold;
@@ -40,7 +47,7 @@
   align-items: center;
 }
 .CourseForm .submit_btn.active{
-  background-color: rgb(45, 80, 237);;
+  background-color: var(--orange);
   color: white;
   opacity: 1;
   cursor: pointer;

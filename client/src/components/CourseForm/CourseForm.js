@@ -181,7 +181,7 @@ useEffect(() => {
     const currentDate = new Date().getDate();
     const selectedDate = new Date(e.target.value).getDate(); 
 
-   // console.log('new Date() === new Date("2024-03-02")',new Date() === new Date("2024-03-03"));
+  
    
    if (selectedDate < currentDate) {
       setErrors({...errors,dayOfWeek:{ message: "La date doit être supérieure ou égale à la date actuelle" }});
@@ -201,8 +201,7 @@ useEffect(() => {
     const currentTime2 = new Date(0, 0, 0, parseInt(heure3.split(":")[0]), parseInt(heure3.split(":")[1]));
     const selectedTime = new Date(0, 0, 0, parseInt(heure2.split(":")[0]), parseInt(heure2.split(":")[1]));
 
-  //  const currentTime = Date.parse("08:00");
-   // const selectedTime = Date.parse(e.target.value);
+  
    console.log('endTime',endTime);
    
    if (selectedTime < currentTime || selectedTime >= currentTime2 ) {
@@ -217,7 +216,6 @@ useEffect(() => {
     setEndTime(e.target.value); 
     const heure1 = "18:00";
     const heure2 = e.target.value;
-   // const heure3 = "08:00";
     const heure3 = startTime;
     const currentTime = new Date(0, 0, 0, parseInt(heure1.split(":")[0]), parseInt(heure1.split(":")[1]));
     const currentTime2 = new Date(0, 0, 0, parseInt(heure3.split(":")[0]), parseInt(heure3.split(":")[1]));
@@ -259,14 +257,14 @@ const handleDurationErrors = (e) =>{
             <div className="form-left">
 
                { errors2.errors? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors2.errors}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors2.errors}</p>
                       : null
                } 
               <div className='field'>
                <label>Name of courses :</label><br/>
                <input type="text" value={name} onChange = {(e)=>handleNameErrors(e)}/>
                { errors.name ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.name.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.name.message}</p>
                       : null
                } 
               </div>
@@ -275,7 +273,7 @@ const handleDurationErrors = (e) =>{
                <label>Level :</label><br/>
                <input type="number" value={level} onChange = {(e)=>handleLevelErrors(e)}/>
               { errors.level ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.level.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.level.message}</p>
                       : null
                } 
               </div>
@@ -283,16 +281,16 @@ const handleDurationErrors = (e) =>{
 
               <div className='field'>
                <label>Description :</label><br/>
-               <input type="text" value={description} onChange = {(e)=>handleDescriptionErrors(e)}/>
+               <input className='desc' type="text" value={description} onChange = {(e)=>handleDescriptionErrors(e)}/>
                { errors.description ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.description.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.description.message}</p>
                       : null
                }
               </div>
 
 
               <div className='field'>
-               <label>Instructor :</label><br/>
+               {/* <label>Instructor :</label><br/> */}
                <input type="hidden" value={instructor}  onChange = {(e)=>setInstructor(e.target.value)}/>
                {
                 iscreatePage === false ?
@@ -304,22 +302,11 @@ const handleDurationErrors = (e) =>{
                </select> : null }
               </div>
 
-
-              <Button courseId="" create={create} update={update} 
-                deletes={deletes}
-                isActive={isActive}
-                successCallback={() => console.log('form')}/>
-
-              </div>
-
-            <div className="form-right">
-             
               <div className='field'>
                <label>DayOfWeek :</label><br/>
-               {/* <input type="date" value={dayOfWeek} onChange = {(e)=>setDayOfWeek(e.target.value)}/> */}
                <input type="date" value={dayOfWeek} onChange = {(e)=>handleDayOfWeekErrors(e)}/>
                { errors.dayOfWeek ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.dayOfWeek.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.dayOfWeek.message}</p>
                       : null
                }
               </div>
@@ -331,11 +318,19 @@ const handleDurationErrors = (e) =>{
                    <option value="online">online</option>
                </select>
                { errors.typeOfCourse ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.typeOfCourse.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.typeOfCourse.message}</p>
                       : null
                }
               </div>
 
+              <Button courseId="" create={create} update={update} 
+                deletes={deletes}
+                isActive={isActive}
+                successCallback={() => console.log('form')}/>
+              </div>
+
+            <div className="form-right">
+             
               <div className='field'>
                <label>Link Meeting :</label><br/>
                <input type="text" value={linkMeeting} onChange = {(e)=>setLinkMeeting(e.target.value)}/>
@@ -354,7 +349,7 @@ const handleDurationErrors = (e) =>{
                    <option value="ux design">ux design</option>
                </select>
                { errors.field ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.field.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.field.message}</p>
                       : null
                }
               </div>
@@ -362,20 +357,18 @@ const handleDurationErrors = (e) =>{
 
               <div className='field'>
                <label>start Time :</label><br/>
-               {/* <input type="time" value={startTime} onChange = {(e)=>setStartTime(e.target.value)}/> */}
                <input type="time" value={startTime} onChange = {(e)=>handleStartTimeErrors(e)}/>
                { errors.startTime ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.startTime.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.startTime.message}</p>
                       : null
                }
               </div>
 
               <div className='field'>
                <label>End Time :</label><br/>
-               {/* <input type="time" value={endTime} onChange = {(e)=>setEndTime(e.target.value)}/> */}
                <input type="time" value={endTime} onChange = {(e)=>handleEndTimeErrors(e)}/>
                { errors.endTime ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.endTime.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.endTime.message}</p>
                       : null
                }
               </div>
@@ -384,7 +377,7 @@ const handleDurationErrors = (e) =>{
                <label>Duration :</label><br/>
                <input type="number" value={duration} onChange = {(e)=>handleDurationErrors(e)}/>
                { errors.duration ? 
-                      <p style={{color:"red",fontWeight:"bold"}}>{errors.duration.message}</p>
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.duration.message}</p>
                       : null
                }
               </div>
@@ -399,19 +392,11 @@ const handleDurationErrors = (e) =>{
                     { availableStudents.map((elt) => (
                       <li key={elt._id} >
                         {elt.name}
-                        {/* {console.log('availableStudents****', availableStudents)}
-                        {console.log('students****', students)}
-                        {console.log('students****', students.some((elt2) => elt2=== elt._id))} */}
-                        
                        {students.some((elt2) => elt2 === elt._id) ? (
-                          <button onClick={(e) => handleStudentRemoval(e,elt._id)}>Remove</button>
+                          <button className='Remove' onClick={(e) => handleStudentRemoval(e,elt._id)}>Remove</button>
                         ) : (
-                          <button onClick={(e) => handleStudentSelection(e,elt._id)}>Add</button>
+                          <button className='Add' onClick={(e) => handleStudentSelection(e,elt._id)}>Add</button>
                         )} 
-                        {/* Cette partie vérifie si un étudiant ( s) dans le selectedStudents le tableau 
-                        a un _id qui correspond à celui de l'étudiant actuel _id.
-                        Le somela méthode renvoie true si au moins un élément du tableau remplit 
-                        la condition, et false sinon */}
                       </li>
                     )) 
                    }

@@ -57,12 +57,14 @@ const CreatePageCourse = () => {
 
   return (
     <div className="CreatePageCourse">
-       <div className="page-top">
+      
+       
+     <div className="page-top">
         <h1>create courses</h1>
         {
           userObjsRole === 'admin' ?
             <Link to="/admin-dashboard">
-              back to Home
+               <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
              </Link> :
              <Link to="/instructor-dashboard">
              back to Home
@@ -98,7 +100,7 @@ const CreatePageCourse = () => {
         iscreatePage={true}
         userObjsRole={userObjsRole}
       />
-      </div> 
+      </div>  
     </div>
   );
 
