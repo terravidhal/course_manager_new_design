@@ -1,4 +1,4 @@
-.InstructorTable {}
+/* .InstructorTable {}
 .InstructorTable table{
    margin-top: 30px;
    border-bottom: 1px solid;
@@ -72,4 +72,17 @@
     font-size: 0.9rem;
     cursor: pointer;
  }
- 
+  */
+
+  .text-left{
+   text-align: left;
+ }
+ .text-center{
+   text-align: center !important;
+ }
+ .InstructorTable  td.options a,.CourseTable  td.instruct a {
+   font-size: 1.5rem;
+ }
+ .InstructorTable  td.options a button{
+   border: none;
+ }

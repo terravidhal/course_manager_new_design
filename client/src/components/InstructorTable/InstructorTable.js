@@ -15,7 +15,7 @@ const InstructorTable = (props) => {
       <table  >
          <thead>
           <tr>
-            <th>Name of Instructor</th>
+            <th className="text-left">Name of Instructor</th>
             <th>Options</th>
           </tr>
         </thead> 
@@ -24,14 +24,16 @@ const InstructorTable = (props) => {
             return (
               <tr className="" key={index}>
                 <td  className="actions">{elt.name}</td>
-                <td className="actions middle">
+                <td className="actions options text-center">
                   <Link className="btt violet"  to={"/instructors/" + elt._id}>
-                    details
-                  </Link> |&nbsp;
+                      <ion-icon name="document-text-outline"></ion-icon>
+                  </Link> &nbsp;
                   <Link className="btt orange"  to={"/instructors/edit/" + elt._id}>
-                    edit
-                  </Link> |&nbsp;
-                  <button className="btt vert" onClick={() => deleteInstructor(elt._id)}>remove</button>
+                       <ion-icon name="create-outline"></ion-icon>
+                  </Link> &nbsp;
+                  <Link className="btt orange"  to="">
+                    <ion-icon name="trash-outline" onClick={() => deleteInstructor(elt._id)}></ion-icon>
+                  </Link>
                 </td>
               </tr>
             );

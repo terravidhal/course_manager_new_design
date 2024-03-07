@@ -235,10 +235,9 @@ toggle.onclick = function () {
                         <span class="icon">
                         <ion-icon name="logo-ionitron"></ion-icon>
                         </span>
-                        <span class="title">CourseCompass</span>
+                        <span class="title orange-color">Course<ion-icon name="logo-react"></ion-icon>Compass</span>
                     </a>
                 </li>
-
                 <li className="crs">
                     <a href="#">
                         <span class="icon">
@@ -247,7 +246,6 @@ toggle.onclick = function () {
                         <span class="title">Manage Courses</span>
                     </a>
                 </li>
-
                 <li className="ins">
                     <a href="#">
                         <span class="icon">
@@ -256,7 +254,6 @@ toggle.onclick = function () {
                         <span class="title">Manage Instructors</span>
                     </a>
                 </li>
-
                 <li className="stud">
                     <a href="#">
                         <span class="icon">
@@ -265,7 +262,6 @@ toggle.onclick = function () {
                         <span class="title">Manage Students</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="#">
                         <span class="icon">
@@ -276,52 +272,34 @@ toggle.onclick = function () {
                 </li>
             </ul>
         </div>
-
-        {/* <!-- ========================= Main ==================== --> */}
         <div class="main">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-
-                {/* <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here"/>
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
-                </div> */}
-
                 <div class="user">
                     <img src="/assets/images/utilisateur.png" alt=""/>
                 </div>
             </div>
-
-            {/* <!-- ======================= Cards ================== --> */}
             <div class="cardBox">
                 <div class="card">
                     <div>
                         <div class="numbers">{allCourses.length}</div>
                         <div class="cardName">Courses</div>
                     </div>
-
                     <div class="iconBx">
-                        {/* <ion-icon name="eye-outline"></ion-icon> */}
                         <ion-icon name="book-outline"></ion-icon>
                     </div>
                 </div>
-
                 <div class="card">
                     <div>
                         <div class="numbers">{allInstructors.length}</div>
                         <div class="cardName">Instructors</div>
                     </div>
-
                     <div class="iconBx">
-                        {/* <ion-icon name="cart-outline"></ion-icon> */}
                         <ion-icon name="school-outline"></ion-icon>
                     </div>
                 </div>
-
                 <div class="card">
                     <div>
                         <div class="numbers">{allStudents.length}</div>
@@ -329,14 +307,10 @@ toggle.onclick = function () {
                     </div>
 
                     <div class="iconBx">
-                        {/* <ion-icon name="chatbubbles-outline"></ion-icon> */}
                         <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
-
             </div>
-
-            {/* <!-- ================ Order Details List ================= --> */}
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -365,7 +339,6 @@ toggle.onclick = function () {
                              </>
                              : null
                         }
-                        {/* <a href="#" class="btn">View All</a> */}
                     </div>
                     {
                       display === 'courses' ?
@@ -379,33 +352,12 @@ toggle.onclick = function () {
                       display === 'instructors' ?
                       <InstructorTable allInstructors={allInstructors} deleteInstructor={deleteInstructor} />: null
                     }
-                   
-                     
                 </div>
             </div>
         </div>
     </div>
-       
-          {/* <div className="page-top">
-            <h1>Speedy course</h1>
-             <Link to="/courses/new">
-             Add an course
-              </Link>
-             <Link to="/instructors/new">
-             Add an instructor
-              </Link>
-             <Link to="/students/new">
-             Add an students
-              </Link>
-          </div>
-          <button onClick={logout}>logout</button>
-          <h4>we have quotes by : </h4>
-          <CourseTable allCourses={allCourses} deleteCourse={deleteCourse} />
-          <StudentTable allStudents={allStudents} deleteStudent={deleteStudent} />
-          <InstructorTable allInstructors={allInstructors} deleteInstructor={deleteInstructor} /> */}
     </div>
   );
-
 };
 
 
