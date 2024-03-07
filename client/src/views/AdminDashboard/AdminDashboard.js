@@ -13,6 +13,7 @@ const AdminDashboard = () => {
   const [allCourses, setAllCourses] = useState([]);
   const [allStudents, setAllStudents] = useState([]);
   const [allInstructors, setAllInstructors] = useState([]);
+  const [display, setDisplay] = useState("courses");
   const navigate = useNavigate();
 
  
@@ -206,6 +207,18 @@ toggle.onclick = function () {
       this.classList.add("terra");
       navigation.classList.remove("active");
       main.classList.remove("active");
+       if (this.classList.contains('ins')) {
+        setDisplay("instructors");
+       }
+       else if(this.classList.contains('stud')){
+        setDisplay("students")
+       }
+       else if(this.classList.contains('crs')){
+        setDisplay("courses")
+       }
+       else{
+        console.log("end");
+       }
    }
    
    list.forEach((item) => item.addEventListener("click", activeLink));
@@ -226,7 +239,7 @@ toggle.onclick = function () {
                     </a>
                 </li>
 
-                <li>
+                <li className="crs">
                     <a href="#">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
@@ -235,7 +248,7 @@ toggle.onclick = function () {
                     </a>
                 </li>
 
-                <li>
+                <li className="ins">
                     <a href="#">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
@@ -244,7 +257,7 @@ toggle.onclick = function () {
                     </a>
                 </li>
 
-                <li>
+                <li className="stud">
                     <a href="#">
                         <span class="icon">
                         <ion-icon name="people-circle-outline"></ion-icon>
@@ -299,7 +312,7 @@ toggle.onclick = function () {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
+                        <div class="numbers">{allInstructors.length}</div>
                         <div class="cardName">Instructors</div>
                     </div>
 
@@ -311,7 +324,7 @@ toggle.onclick = function () {
 
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
+                        <div class="numbers">{allStudents.length}</div>
                         <div class="cardName">Students</div>
                     </div>
 
@@ -327,78 +340,47 @@ toggle.onclick = function () {
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Recent Courses</h2>
+                        { display === 'courses' ?
+                            <>
+                            <h2>Recent Courses</h2> 
+                            <Link className='blue-color'  to="/courses/new">
+                               +Add
+                            </Link>
+                            </>
+                            : 
+                          display === 'students' ?  
+                            <>
+                              <h2>Recent Students</h2> 
+                              <Link class="blue-color" to="/students/new">
+                                 +Add
+                              </Link>
+                            </>
+                            :
+                          display === 'instructors' ?
+                             <>
+                              <h2>Recent Instructors</h2> 
+                              <Link class="blue-color" to="/instructors/new">
+                                 +Add
+                              </Link>
+                             </>
+                             : null
+                        }
                         {/* <a href="#" class="btn">View All</a> */}
                     </div>
-                    <CourseTable allCourses={allCourses} deleteCourse={deleteCourse} />
-                    {/* <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table> */}
+                    {
+                      display === 'courses' ?
+                      <CourseTable allCourses={allCourses} deleteCourse={deleteCourse} />: null
+                    }
+                    {
+                      display === 'students' ?
+                      <StudentTable allStudents={allStudents} deleteStudent={deleteStudent} />: null
+                    }
+                    {
+                      display === 'instructors' ?
+                      <InstructorTable allInstructors={allInstructors} deleteInstructor={deleteInstructor} />: null
+                    }
+                   
+                     
                 </div>
             </div>
         </div>

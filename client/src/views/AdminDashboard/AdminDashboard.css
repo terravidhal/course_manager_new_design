@@ -406,7 +406,10 @@ body {
   position: relative;
   width: 100%;
 }
-
+.blue-color{
+  font-weight: bold;
+  color: var(--blue);
+}
 /* =============== Navigation ================ */
 .navigation {
   position: fixed;
@@ -745,6 +748,8 @@ body {
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  /*ajout*/
+  grid-template-rows: 1fr 16fr;
 }
 
 .details .cardHeader {
