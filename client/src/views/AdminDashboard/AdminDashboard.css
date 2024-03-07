@@ -13,6 +13,19 @@
   --black2: #999;
 }
 
+
+ * {
+  font-family: "Ubuntu", sans-serif; 
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+} 
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+} 
+
 .container {
   position: relative;
   width: 100%;
@@ -54,6 +67,8 @@
   top: 0;
   left: 0;
   width: 100%;
+  /**/
+  padding-left: 0;
 }
 
 .navigation ul li {

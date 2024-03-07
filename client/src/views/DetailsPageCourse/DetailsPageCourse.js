@@ -43,28 +43,27 @@ const DetailsPageCourse = () => {
   return(
     <div className="DetailsPageCourse">
       <div className="page-top">
-        <h1>Speedy Courses</h1>
+        <h1>Details Courses</h1>
         {
             userObjsRole === 'admin' ? (
                 <Link to="/admin-dashboard">
-                    back to Home
+                    <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
                 </Link>
             ) : userObjsRole === 'student' ? (
                 <Link to="/student-dashboard">
-                    back to Home
+                    <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
                 </Link>
             ) : (
                 <Link to="/instructor-dashboard">
-                    back to Home
+                    <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
                 </Link>
             )
         }
-      </div>  
-        
-      <div className="page-top">
-        <h2>{OneCourse.name} courses</h2>
-      </div>  
+      </div>   
       <div className="page-content">
+        <div className="details-img">
+          <img src="/assets/images/OIG1.jfif" alt="" />
+        </div>
         <div className="fields">
             <p><span className='infos'>Level:</span>{OneCourse.level}</p>
             <p><span className='infos'>field:</span>{OneCourse.field}</p>

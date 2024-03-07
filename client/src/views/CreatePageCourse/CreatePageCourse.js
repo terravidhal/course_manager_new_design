@@ -67,7 +67,7 @@ const CreatePageCourse = () => {
                <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
              </Link> :
              <Link to="/instructor-dashboard">
-             back to Home
+               <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
             </Link>
         }
       </div>

@@ -32,7 +32,7 @@ const StudentTable = (props) => {
                   <Link className="btt violet"  to={"/students/" + elt._id}>
                      <ion-icon name="document-text-outline"></ion-icon>
                   </Link> &nbsp;
-                  <Link className="btt orange"  to={"/students/edit/" + elt._id}>
+                  <Link className="btt"  to={"/students/edit/" + elt._id}>
                      <ion-icon name="create-outline"></ion-icon>
                   </Link> &nbsp;
                   <Link className="btt orange"  to="">
