@@ -59,3 +59,12 @@
    cursor: not-allowed;
 }
 
+@media (max-width: 991px) {
+  .CourseForm form{
+    flex-direction: column;
+   }
+   .CreatePageCourse .page-top {
+    flex-direction: column;
+    align-items: start;
+  }
+}
