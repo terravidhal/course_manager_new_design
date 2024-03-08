@@ -1,8 +1,19 @@
 .CourseForm {
    padding: 20px;
+   /**/
+    /**/
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    grid-template-rows: 1fr 16fr;
+  
 }
 .CourseForm form{
  display: flex;
+   gap: 40px;
+  box-sizing: border-box;
 }
 .CourseForm form p{
  width: 70%;
@@ -18,10 +29,23 @@
 }
 .CourseForm label{
   font-weight: bold;
+  color: var(--blue);
+}
+.CourseForm .studPpties{
+  color: var(--blue);
+}
+.CourseForm .field.stud-lab{
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}
+.CourseForm input{
+  margin-top: 10px;
 }
 .CourseForm input[type="text"],.CourseForm input[type="number"],
 .CourseForm select{
-  width: 70%;
+  /* width: 70%; */
+  width: 100%;
   margin: 5px 0;
   outline: none;
   height: 30px;
@@ -31,9 +55,10 @@
 }
 .CourseForm input[type="submit"], .CourseForm button[type="submit"]{
   margin: 5px 0;
-  width: 70%;
+  /* width: 70%; */
+  width: 100%;
  padding: 8px 0;
- background-color: #f79623;
+ background-color: var(--blue);
  outline: none;
  border: 0px;
  font-weight: bold;
@@ -47,7 +72,7 @@
   align-items: center;
 }
 .CourseForm .submit_btn.active{
-  background-color: var(--orange);
+  background-color: var(--blue);
   color: white;
   opacity: 1;
   cursor: pointer;

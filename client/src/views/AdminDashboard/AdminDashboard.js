@@ -272,7 +272,7 @@ toggle.onclick = function () {
                 </li>
             </ul>
         </div>
-        <div class="main">
+        <div class="main  relative">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>

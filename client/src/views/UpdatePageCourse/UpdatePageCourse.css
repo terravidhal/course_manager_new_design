@@ -1,19 +1,20 @@
 .UpdatePageCourse {
   padding: 50px;
-  background-color: var(--blue);
+  background-color: var(--white);
 }
 .UpdatePageCourse .page-top{
 display: flex;
 justify-content: space-between;
-width: 70%;
+/* width: 70%; */
 align-items: center;
+color: var(--blue);
 }
 .UpdatePageCourse .page-top h1{
 
 }
 .UpdatePageCourse .page-top a{
 font-size: 1.5rem;
-color: var(--orange);
+color: var(--oranges);
 font-weight: bold;
 }
 .UpdatePageCourse h4{
@@ -25,7 +26,6 @@ color: rgba(255, 255, 255, 0.733);
 }
 .UpdatePageCourse li {
  font-weight: bold;
- color: white;
 }
 .UpdatePageCourse li button{
  border: none;

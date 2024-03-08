@@ -91,6 +91,7 @@ useEffect(() => {
     console.log('new Date(dayOfWeek).getDay()', new Date(dayOfWeek).getTime());
     console.log('new Date().getDay()', new Date().getTime());
     console.log('dayOfWeek', dayOfWeek);
+    console.log('isActive', isActive);
   }, [name,level,description, 
      duration, dayOfWeek, startTime,endTime
     ]);
@@ -260,7 +261,7 @@ const handleDurationErrors = (e) =>{
                       : null
                } 
               <div className='field'>
-               <label>Name of courses :</label><br/>
+               <label>Name of courses </label><br/>
                <input type="text" value={name} onChange = {(e)=>handleNameErrors(e)}/>
                { errors.name ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.name.message}</p>
@@ -268,7 +269,7 @@ const handleDurationErrors = (e) =>{
                } 
               </div>
               <div className='field'>
-               <label>Level :</label><br/>
+               <label>Level </label><br/>
                <input type="number" value={level} onChange = {(e)=>handleLevelErrors(e)}/>
               { errors.level ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.level.message}</p>
@@ -276,7 +277,7 @@ const handleDurationErrors = (e) =>{
                } 
               </div>
               <div className='field'>
-               <label>Description :</label><br/>
+               <label>Description </label><br/>
                <input className='desc' type="text" value={description} onChange = {(e)=>handleDescriptionErrors(e)}/>
                { errors.description ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.description.message}</p>
@@ -295,7 +296,7 @@ const handleDurationErrors = (e) =>{
                </select> : null }
               </div>
               <div className='field'>
-               <label>DayOfWeek :</label><br/>
+               <label>DayOfWeek </label><br/>
                <input type="date" value={dayOfWeek} onChange = {(e)=>handleDayOfWeekErrors(e)}/>
                { errors.dayOfWeek ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.dayOfWeek.message}</p>
@@ -303,7 +304,7 @@ const handleDurationErrors = (e) =>{
                }
               </div>
               <div className='field'>
-               <label>Type of course :</label><br/>
+               <label>Type of course </label><br/>
                <select name="" id="" value={typeOfCourse} onChange = {(e)=>setTypeOfCourse(e.target.value)}>
                    <option value="presential">presential</option>
                    <option value="online">online</option>
@@ -315,13 +316,14 @@ const handleDurationErrors = (e) =>{
               </div>
               {
                 iscreatePage === false ?
-                 <div className='field'>
-                 <label>Students:</label><br/>
+                 <div className='field stud-lab'>
+                 <label>Students</label><br/>
                  {loaded === true ? 
                  <ul>
                     { availableStudents.map((elt) => (
                       <li key={elt._id} >
-                        {elt.name}
+                        <span className="studPpties">{'  Name: '}</span>{elt.name}
+                        <span className="studPpties">{'  Level: '}</span>{elt.levelStudent}
                        {students.some((elt2) => elt2 === elt._id) ? (
                           <button className='Remove' onClick={(e) => handleStudentRemoval(e,elt._id)}>Remove</button>
                         ) : (
@@ -339,7 +341,7 @@ const handleDurationErrors = (e) =>{
               </div>
             <div className="form-right">
               <div className='field'>
-               <label>Link Meeting :</label><br/>
+               <label>Link Meeting </label><br/>
                <input type="text" value={linkMeeting} onChange = {(e)=>setLinkMeeting(e.target.value)}/>
               </div>
               <div className='field'>
@@ -347,7 +349,7 @@ const handleDurationErrors = (e) =>{
                <input type="text" value={documentsLink} onChange = {(e)=>setDocumentsLink(e.target.value)}/>
               </div>
               <div className='field'>
-               <label>Field :</label><br/>
+               <label>Field </label><br/>
                <select name="" id="" value={field} onChange = {(e)=>setField(e.target.value)}>
                    <option value="Web developement">Web developement</option>
                    <option value="data analyst">data analyst</option>
@@ -359,7 +361,7 @@ const handleDurationErrors = (e) =>{
                }
               </div>
               <div className='field'>
-               <label>start Time :</label><br/>
+               <label>start Time </label><br/>
                <input type="time" value={startTime} onChange = {(e)=>handleStartTimeErrors(e)}/>
                { errors.startTime ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.startTime.message}</p>
@@ -367,7 +369,7 @@ const handleDurationErrors = (e) =>{
                }
               </div>
               <div className='field'>
-               <label>End Time :</label><br/>
+               <label>End Time </label><br/>
                <input type="time" value={endTime} onChange = {(e)=>handleEndTimeErrors(e)}/>
                { errors.endTime ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.endTime.message}</p>
@@ -375,7 +377,7 @@ const handleDurationErrors = (e) =>{
                }
               </div>
               <div className='field'>
-               <label>Duration :</label><br/>
+               <label>Duration </label><br/>
                <input type="number" value={duration} onChange = {(e)=>handleDurationErrors(e)}/>
                { errors.duration ? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.duration.message}</p>
