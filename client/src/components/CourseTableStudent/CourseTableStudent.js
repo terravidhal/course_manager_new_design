@@ -27,7 +27,7 @@ const CourseTableStudent = (props) => {
 
   return (
     <div className="CourseTableStudent">
-      <table striped >
+      {/* <table striped >
          <thead>
           <tr>
             <th>Name of Course</th>
@@ -56,15 +56,9 @@ const CourseTableStudent = (props) => {
                         <Link className=""  to={"/instructorByCourse/" + elt.instructor}>
                          view instructor create courses
                        </Link>
-                     
-                      {/* {elt.instructor}
-                      <Link className=""  to={"/instructorByCourse/" + elt.instructor}>
-                           view instructor create courses
-                      </Link>&nbsp; */}
                       </td>
                     <td  className="actions">
                       {elt.dayOfWeek}
-                      {/* {CheckDayOfWeekErrors(elt.dayOfWeek)} */}
                     </td>
                     <td  className="actions">{elt.typeOfCourse}</td>
                     <td  className="actions">{elt.linkMeeting}</td>
@@ -90,7 +84,53 @@ const CourseTableStudent = (props) => {
             );
           })} 
         </tbody>
+      </table> */}
+      <div className="CourseTableStudent">
+      <table>
+         <thead>
+          <tr>
+            <th className="text-left">Name of Course</th>
+            <th>Level</th>
+            <th>field</th>
+            <th className="text-left">Instructor</th>
+            <th className="text-center">Status</th>
+            <th>Options</th>
+          </tr>
+        </thead> 
+        <tbody>
+        {  allCourses.map((elt, index) => {
+            return (
+              <tr className="" key={index}>
+                <td  className="actions">{elt.name}</td>
+                <td  className="actions text-center">{elt.level}</td>
+                <td  className="actions">{elt.field}</td>
+                <td  className="actions instruct">
+                  { userObjsId === elt.instructor ? "Me" :
+                     <Link className="btt blue"  to={"/instructorByCourse/" + elt.instructor}>
+                       <ion-icon name="eye-outline"></ion-icon>
+                     </Link>
+                  }
+                  </td>
+                <td  className="actions text-center">
+                  <button
+                      className={`${
+                        elt.status === "pending"
+                          ? "status inProgress"
+                          : "status pending"
+                      }`}
+                    > {elt.status}</button>
+                </td>
+                <td className="actions text-center options">
+                  <Link className="btt violet"  to={"/courses/" + elt._id}>
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </Link> &nbsp;
+                </td>
+              </tr>
+            );
+          })} 
+        </tbody>
       </table>
+    </div>
     </div>
   );
 };

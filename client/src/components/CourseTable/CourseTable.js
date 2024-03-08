@@ -77,8 +77,6 @@ const CourseTable = (props) => {
           })} 
         </tbody>
       </table>
-     
-     
      </div>
      
   );

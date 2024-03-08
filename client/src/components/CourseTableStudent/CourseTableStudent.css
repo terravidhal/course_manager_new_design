@@ -1,3 +1,44 @@
+/* .CourseTableStudentStudent{
+   
+}
+.CourseTableStudentStudent table{
+   margin-top: 30px;
+   border-bottom: 1px solid;
+}
+.CourseTableStudentStudent table thead tr th{
+   border: 1px solid;
+   border-bottom: 0px solid;
+}
+.CourseTableStudentStudent table tbody tr td{
+   border: 1px solid;
+   border-bottom: 0px solid;
+}
+.CourseTableStudentStudent table tbody tr td:nth-child(1),
+.CourseTableStudentStudent table tbody tr td:nth-child(2),
+.CourseTableStudentStudent table tbody tr td:nth-child(3){
+   border-top: 0px solid;
+}
+.CourseTableStudentStudent tr > td.actions{
+   vertical-align: middle;
+}
+
+.CourseTableStudentStudent  button.blue-btn{
+   background-color: rgb(34, 34, 239);
+   color: white;
+}
+.CourseTableStudentStudent  button.red-btn{
+   background-color: rgb(182, 182, 70);
+   color: white;
+}
+ */
+
+
+ 
+
+
+
+/*
+
 .CourseTableStudent{
    
 }
@@ -11,8 +52,9 @@
 }
 .CourseTableStudent table tbody tr td{
    border: 1px solid;
-   border-bottom: 0px solid;
-}
+    border-bottom: 0px solid; 
+}   
+
 .CourseTableStudent table tbody tr td:nth-child(1),
 .CourseTableStudent table tbody tr td:nth-child(2),
 .CourseTableStudent table tbody tr td:nth-child(3){
@@ -20,14 +62,74 @@
 }
 .CourseTableStudent tr > td.actions{
    vertical-align: middle;
-}
-
-.CourseTableStudent  button.blue-btn{
-   background-color: rgb(34, 34, 239);
+} 
+.CourseTableStudent button.blue-btn{
+   background-color: #337180;
+   position: relative;
+   padding: 5px 10px;
+   text-decoration: none;
    color: white;
+   border-radius: 6px;
+   border: none;
 }
-.CourseTableStudent  button.red-btn{
+.CourseTableStudent button.red-btn{
    background-color: rgb(182, 182, 70);
+   position: relative;
+   padding: 5px 10px;
+   text-decoration: none;
    color: white;
+   border-radius: 6px;
+   border: none;
 }
 
+.CourseTableStudent .btt{
+   font-weight: bold;
+}
+.CourseTableStudent .btt.violet{
+   color: rgb(130, 9, 217);
+}
+.CourseTableStudent .btt.brown{
+   color: brown;
+}
+.CourseTableStudent .btt.blue{
+   color: rgb(0, 110, 255);
+}
+.CourseTableStudent .btt.orange{
+   color: orange;
+}
+.CourseTableStudent .btt.vert{
+   background-color: transparent;
+   position: relative;
+   text-decoration: none;
+   color: green;
+   border-radius: 6px;
+   border: none;
+   text-decoration: underline;
+   font-size: 0.9rem;
+   cursor: pointer;
+}
+*/
+
+.text-left{
+   text-align: left;
+ }
+ .text-center{
+   text-align: center !important;
+ }
+ .CourseTableStudent  td.options a,.CourseTableStudent  td.instruct a {
+   font-size: 1.5rem;
+ }
+ .CourseTableStudent  td.options a.btt.orange,.CourseTableStudent  td.instruct a.btt.orange {
+    position: relative;
+   left: -5px;
+  }
+ .CourseTableStudent  td.options a button{
+   border: none;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 

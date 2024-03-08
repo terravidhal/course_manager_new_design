@@ -57,7 +57,7 @@ const InstructorByCourse = () => {
   return(
     <div className="StudentsByCourse">
       <div className="page-top">
-        <h1>Students by course</h1>
+        <h1>Instructor by course</h1>
         {
             userObjsRole === 'admin' ? (
                 <Link to="/admin-dashboard">
@@ -76,7 +76,7 @@ const InstructorByCourse = () => {
       </div>  
         
       <div className="page-top">
-        <h2> students</h2>
+        <h2> Instructor</h2>
       </div>  
       <div className="page-content">
           { loaded === true ? 

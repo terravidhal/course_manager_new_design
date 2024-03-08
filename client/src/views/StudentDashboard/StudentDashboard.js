@@ -9,6 +9,7 @@ import CourseTableStudent from '../../components/CourseTableStudent/CourseTableS
 
 const StudentDashboard = () => {
   const [allCourses, setAllCourses] = useState([]);
+  const [display, setDisplay] = useState("courses");
   const navigate = useNavigate();
 
  /* const cookies = new Cookies();
@@ -151,15 +152,109 @@ const StudentDashboard = () => {
 };
 
 
+
+
+  // Menu Toggle
+let toggle = document.querySelector(".toggle") || {};
+let navigation = document.querySelector(".navigation");
+let main = document.querySelector(".main");
+
+toggle.onclick = function () {
+  navigation.classList.toggle("active");
+  main.classList.toggle("active");
+};
+
+
+   // add hovered class to selected list item
+   let list = document.querySelectorAll(".navigation li");
+
+   function activeLink() {
+     list.forEach((item) => {
+       item.classList.remove("terra");
+     });
+      this.classList.add("terra");
+      navigation.classList.remove("active");
+      main.classList.remove("active");
+       if (this.classList.contains('ins')) {
+        setDisplay("instructors");
+       }
+       else if(this.classList.contains('stud')){
+        setDisplay("students")
+       }
+       else if(this.classList.contains('crs')){
+        setDisplay("courses")
+       }
+       else{
+        console.log("end");
+       }
+   }
+   
+   list.forEach((item) => item.addEventListener("click", activeLink));
+
+
   
   return (
     <div className="StudentDashboard">
-       <div className="page-top">
-        <h1>Speedy course</h1>
+      <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                        <ion-icon name="logo-ionitron"></ion-icon>
+                        </span>
+                        <span class="title orange-color">Course<ion-icon name="logo-react"></ion-icon>Compass</span>
+                    </a>
+                </li>
+                <li className="crs">
+                    <Link to="">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Manage Courses</span>
+                    </Link>
+                </li>
+                <li>
+                     <Link to="">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title" onClick={logout}>Sign Out</span>
+                      </Link>
+                </li>
+            </ul>
+        </div>
+        <div class="main  relative">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="user">
+                    <img src="/assets/images/utilisateur.png" alt=""/>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">{allCourses.length}</div>
+                        <div class="cardName">Courses</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                            <h2>Recent Courses</h2> 
+                    </div>
+                    <CourseTableStudent allCourses={allCourses} />
+                </div>
+            </div>
+        </div>
       </div>
-      <button onClick={logout}>logout</button>
-      <h4>we have quotes by : </h4>
-      <CourseTableStudent allCourses={allCourses} />
     </div>
   );
 
