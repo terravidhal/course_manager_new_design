@@ -62,3 +62,19 @@
   color: var(--oranges);
   font-weight: bold;
 }
+
+
+@media (max-width: 991px) {
+  .DetailsPageStudent .page-top {
+   flex-direction: column;
+   align-items: center;
+  }
+  .DetailsPageStudent .page-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .DetailsPageStudent .details-img img {
+    width: 200px;
+    border-radius: 5px;
+  }
+}

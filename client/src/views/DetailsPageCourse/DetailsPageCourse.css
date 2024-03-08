@@ -60,3 +60,19 @@
   color: var(--oranges);
   font-weight: bold;
 }
+
+
+@media (max-width: 991px) {
+  .DetailsPageCourse .page-top {
+   flex-direction: column;
+   align-items: center;
+  }
+  .DetailsPageCourse .page-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .DetailsPageCourse .details-img img {
+    width: 200px;
+    border-radius: 5px;
+  }
+}

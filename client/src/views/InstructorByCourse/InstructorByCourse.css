@@ -64,3 +64,18 @@
   color: var(--oranges);
   font-weight: bold;
 }
+
+@media (max-width: 991px) {
+  .InstructorByCourse .page-top {
+   flex-direction: column;
+   align-items: center;
+  }
+  .InstructorByCourse .page-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .InstructorByCourse .details-img img {
+    width: 200px;
+    border-radius: 5px;
+  }
+}
