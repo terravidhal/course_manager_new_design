@@ -55,11 +55,21 @@ const RegisterStudent = (props)=>{
   };
   
   return(
-    <div>
-      <h2>Register Student</h2>
-      <Link to="/login_page">
-             login 
-      </Link>
+    <div className="RegisterStudent" style={{
+      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '100vh',
+      position: 'relative',
+    }}>
+      <div className="page-top">
+         <h2>Register Student</h2>
+      </div>
+      
 
       
       
@@ -69,7 +79,7 @@ const RegisterStudent = (props)=>{
         :null
       }
       <form onSubmit={register}>
-        <div>
+        <div className="field">
           <label>name</label>
           {
             errs.name?
@@ -78,7 +88,7 @@ const RegisterStudent = (props)=>{
           }
           <input type="text" name="name" value={user.name} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Email</label>
           {
             errs.email?
@@ -87,7 +97,8 @@ const RegisterStudent = (props)=>{
           }
           <input type="email" name="email" value={user.email} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="super-fields">
+          <div className="field">
           <label>field Of Study</label>
           {
             errs.fieldOfStudy?
@@ -99,8 +110,8 @@ const RegisterStudent = (props)=>{
                <option value="data analyst">data analyst</option>
                <option value="ux design">ux design</option>
           </select>
-        </div>
-        <div>
+          </div>
+          <div className="field">
           <label>level Student</label>
           {
             errs.levelStudent?
@@ -108,8 +119,10 @@ const RegisterStudent = (props)=>{
             :null
           }
           <input type="number" name="levelStudent" value={user.levelStudent} onChange={(e)=> handleChange(e)}/>
+          </div>
         </div>
-        <div>
+        <div className="super-fields">
+          <div className="field">
           <label>Password</label>
           {
             errs.password?
@@ -117,8 +130,8 @@ const RegisterStudent = (props)=>{
             :null
           }
           <input type="password" name="password" value={user.password} onChange={(e)=> handleChange(e)}/>
-        </div>
-        <div>
+          </div>
+        <div className="field">
           <label>Confirm Password</label>
           {
             errs.confirmPassword?
@@ -127,7 +140,13 @@ const RegisterStudent = (props)=>{
           }
           <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={(e)=> handleChange(e)}/>
         </div>
+        </div>
         <button type="submit">Register Me</button>
+        <p className="suggest">you have  account ?&nbsp; 
+        <Link to="/login_page">
+             login 
+        </Link>
+        </p>
       </form>
     </div>
   );

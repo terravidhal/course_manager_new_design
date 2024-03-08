@@ -19,35 +19,10 @@ const RegisterInstructor = (props)=>{
     const handleChange = (e)=>{
       setUser({
         ...user,
-        [e.target.name]: e.target.value // e.target.name => recupere la valeur du champ "name" de l'input
+        [e.target.name]: e.target.value 
       })
     }
   
-   /* const register = e =>{
-      e.preventDefault();
-      axios.post('http://localhost:8000/api/registerInstructor',
-      user,
-      {
-        withCredentials: true,
-      })
-      .then(res =>{
-        console.log(res.data);
-        setUser({
-          name:"",
-          email:"",
-          password:"",
-          confirmPassword:""
-        })
-        setConfirmReg("Thank you for registering, you can now log in");
-        setErrs({});
-        navigate("/login_page");
-      })
-      .catch((err)=>{
-       // console.log(err);
-       // setErrs(err.response.data.errors.errors);
-        console.log("+++++++++",err);
-      })
-  }; */
 
     const register = e =>{
       e.preventDefault();
@@ -82,21 +57,27 @@ const RegisterInstructor = (props)=>{
   };
   
   return(
-    <div>
-      <h2>Register instuctor</h2>
-      <Link to="/login_page">
-             login 
-      </Link>
-
-     
-      
+    <div className="RegisterInstructor" style={{
+      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '100vh',
+      position: 'relative',
+    }}>
+      <div className="page-top">
+         <h2>Register instuctor</h2>
+      </div>
       {
         confirmReg?
         <h1 style={{color: "grey"}}>{confirmReg}</h1>
         :null
       }
       <form onSubmit={register}>
-        <div>
+        <div className="field">
           <label>name</label>
           {
             errs.name?
@@ -105,7 +86,7 @@ const RegisterInstructor = (props)=>{
           }
           <input type="text" name="name" value={user.name} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Email</label>
           {
             errs.email?
@@ -114,7 +95,7 @@ const RegisterInstructor = (props)=>{
           }
           <input type="email" name="email" value={user.email} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Password</label>
           {
             errs.password?
@@ -123,7 +104,7 @@ const RegisterInstructor = (props)=>{
           }
           <input type="password" name="password" value={user.password} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Confirm Password</label>
           {
             errs.confirmPassword?
@@ -133,6 +114,11 @@ const RegisterInstructor = (props)=>{
           <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={(e)=> handleChange(e)}/>
         </div>
         <button type="submit">Register Me</button>
+        <p className="suggest">you have  account ?&nbsp; 
+        <Link to="/login_page">
+             login 
+        </Link>
+        </p>
       </form>
     </div>
   );

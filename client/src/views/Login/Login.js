@@ -106,28 +106,42 @@ const Login = (props)=>{
 
   
   return(
-    <div>
-      <h2>Login</h2>
-      <Link to="/register_instructor">
-             Register instructor
-      </Link>
-      <Link to="/register_student">
-             Register student
-      </Link>
+    <div className="Login" style={{
+      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '100vh',
+      position: 'relative',
+    }}>
+      <div className="page-top">
+         <h2>Login</h2>
+      </div>
 
       
 
       <p className="error-text">{errorMessage? errorMessage : ""}</p>
       <form onSubmit={login}>
-        <div>
+        <div className="field">
           <label>Email</label>
           <input type="text" name="email" value={email} onChange={(e)=> setEmail(e.target.value)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Password</label>
           <input type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
         </div>
         <button type="submit">Sign in</button>
+        <p className="suggest">you have not account ?&nbsp; 
+        <Link to="/register_instructor">
+                Register instructor
+         </Link>&nbsp;  Or &nbsp;
+         <Link to="/register_student">
+                Register student
+         </Link>
+        </p>
       </form>
       </div>
     );
