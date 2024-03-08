@@ -19,10 +19,10 @@ const HomeHome = () => (
   <div class="header top-1">
          <div class="title">
            <div class="title-1">
-               ACADEMIA
+               COURSES COMPASS
            </div>
            <div class="title-2">
-              Online Education & Learning
+              System Management Of Courses
            </div>
          </div>
          <div class="social-icons">
@@ -43,7 +43,6 @@ const HomeHome = () => (
       <div class="header top-2">
         <ul>
           <li class="active">Home</li>
-          <li>Allcourses</li>
           <li>About</li>
           <li>Team</li>
           <li>Contact</li>
@@ -51,13 +50,13 @@ const HomeHome = () => (
       </div>
       <div class="card-1">
           <div class="title-card">
-              WELCOME TO ACADEMIA
+              WELCOME TO COURSES COMPASS
           </div>
           <div class="message-card1">
-              Best Online Education Expertise 
+              Best Online Courses Management 
           </div>
           <div class="message-card2">
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
+          Explore our platform to access the best course management tools. Learn, grow, and excel with our courses. 
           </div>
           <div class="buttons">
               <button class="primary">
