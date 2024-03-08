@@ -55,35 +55,37 @@ const InstructorByCourse = () => {
 
  
   return(
-    <div className="StudentsByCourse">
+    <div className="InstructorByCourse">
       <div className="page-top">
         <h1>Instructor by course</h1>
         {
             userObjsRole === 'admin' ? (
                 <Link to="/admin-dashboard">
-                    back to Home
+                   <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
                 </Link>
             ) : userObjsRole === 'student' ? (
                 <Link to="/student-dashboard">
-                    back to Home
+                   <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
                 </Link>
             ) : (
                 <Link to="/instructor-dashboard">
-                    back to Home
+                    <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
                 </Link>
             )
         }
       </div>  
-        
-      <div className="page-top">
-        <h2> Instructor</h2>
-      </div>  
+         
       <div className="page-content">
           { loaded === true ? 
+          <>
+          <div className="details-img">
+          <img src="/assets/images/OIG1.jfif" alt="" />
+         </div>
           <div className="fields">
                <p><span className='infos'>name:</span>&nbsp;{InstructByCourse.name}</p>
                <p><span className='infos'>email:</span>&nbsp;{InstructByCourse.email}</p>
           </div>
+          </>
           : null }
       </div>
     </div>

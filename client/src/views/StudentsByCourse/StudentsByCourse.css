@@ -1,1 +1,68 @@
 .StudentsByCourse {}
+
+.StudentsByCourse {}
+
+.StudentsByCourse {}
+
+.StudentsByCourse {
+    background-color: var(--white);
+    height: 100vh;
+}
+.StudentsByCourse .page-top h1{
+    color: var(--blue);
+}
+.StudentsByCourse .page-content{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.StudentsByCourse .details-img{
+   flex: 1;
+   border-radius: 5px;
+}
+.StudentsByCourse .details-img img{
+   width: 400px;
+   border-radius: 5px;
+}
+.StudentsByCourse .fields{
+   flex: 3;
+   border-radius: 5px;
+}
+.StudentsByCourse .fields p{
+}
+.StudentsByCourse .fields p span.infos{
+   color: var(--blue);
+   margin-right: 10px;
+}
+.StudentsByCourse .page-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 10px;
+}
+.StudentsByCourse .page-top h1{
+  
+}
+.StudentsByCourse .page-top a{
+  
+}
+.StudentsByCourse h4{
+  color: gray;
+}
+.StudentsByCourse .page-content{
+    /* border: 5px solid white; */
+    padding: 20px  0;
+    margin: 0px auto; 
+    padding-bottom: 40px;
+    width: 70%; 
+}
+.StudentsByCourse span.infos{
+    font-weight: bold;
+ }
+ .StudentsByCourse .page-top a{
+  font-size: 1.5rem;
+  color: var(--oranges);
+  font-weight: bold;
+}

@@ -35,6 +35,7 @@ const CourseTable = (props) => {
             <th>field</th>
             <th className="text-left">Instructor</th>
             <th className="text-center">Status</th>
+            <th className="text-center">Students</th>
             <th>Options</th>
           </tr>
         </thead> 
@@ -61,6 +62,14 @@ const CourseTable = (props) => {
                       }`}
                     > {elt.status}</button>
                 </td>
+                <td  className="actions instruct">
+                 <ul>
+                    <Link className=""  to={"/studentsByCourse/" + elt._id}>
+                    <ion-icon name="eye-outline"></ion-icon>
+                     </Link>&nbsp;
+                  </ul> 
+                 
+                  </td>
                 <td className="actions text-center options">
                   <Link className="btt violet"  to={"/courses/" + elt._id}>
                     <ion-icon name="document-text-outline"></ion-icon>

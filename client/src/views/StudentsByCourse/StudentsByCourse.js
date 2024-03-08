@@ -58,21 +58,25 @@ const StudentsByCourse = () => {
         }
       </div>  
         
-      <div className="page-top">
-        <h2> students</h2>
-      </div>  
+      
       <div className="page-content">
+      <div className="details-img">
+          <img src="/assets/images/OIG1.jfif" alt="" />
+         </div>
           <div className="fields">
           { loaded === true ? 
               StudByCourse.map((elt,index) => (
-                <li key={index}>
+                <div key={index}>
                    <p><span className='infos'>name:</span>&nbsp;{elt.name}</p>
                    <p><span className='infos'>email:</span>&nbsp;{elt.email}</p>
                    <p><span className='infos'>fieldOfStudy:</span>&nbsp;{elt.fieldOfStudy}</p>
                    <p><span className='infos'>levelStudent:</span>&nbsp;{elt.levelStudent}</p>
-                </li>
+                </div>
               )) : null
           } 
+          { StudByCourse.length === 0 ? <p><span className='infos'>Students:</span>&nbsp;{"0"}</p> : null }
+
+          
           </div>
       </div>
     </div>
