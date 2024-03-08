@@ -59,53 +59,53 @@ module.exports = {
 
 
   // login
-  login : async (req, res) => {
-    const { email, password, tocken } = req.body;
+  // login : async (req, res) => {
+  //   const { email, password, tocken } = req.body;
   
-    const secretToken = process.env.SECRET_TOCKEN; // Votre mot de passe secret
+  //   const secretToken = process.env.SECRET_TOCKEN; // Votre mot de passe secret
 
-    try {
+  //   try {
     
-      if (tocken !== secretToken) {
-        return res.status(400).json({ message: "Invalid tocken" });
-      }
-      // Recherchez l'utilisateur dans les deux collections
-      const admin = await UserModel.findOne({ email });
+  //     if (tocken !== secretToken) {
+  //       return res.status(400).json({ message: "Invalid tocken" });
+  //     }
+  //     // Recherchez l'utilisateur dans les deux collections
+  //     const admin = await UserModel.findOne({ email });
 
      
-       // verifie le password
-       const isPasswordValid = await bcrypt.compare(password, admin.password);
+  //      // verifie le password
+  //      const isPasswordValid = await bcrypt.compare(password, admin.password);
   
-       if (!isPasswordValid) {
-         return res.status(400).json({ message: "Incorrect email or password" });
-       }
-     // Générez un jeton JWT
-     const adminInfo = {
-       _id: admin._id,
-       name: admin.name,
-      // email: admin.email,
-       role: 'admin', // Ajoutez le rôle de l'utilisateur (admin)
-     };
+  //      if (!isPasswordValid) {
+  //        return res.status(400).json({ message: "Incorrect email or password" });
+  //      }
+  //    // Générez un jeton JWT
+  //    const adminInfo = {
+  //      _id: admin._id,
+  //      name: admin.name,
+  //     // email: admin.email,
+  //      role: 'admin', // Ajoutez le rôle de l'utilisateur (admin)
+  //    };
  
-       const adminToken = jwt.sign(adminInfo, process.env.JWT_SECRET);
+  //      const adminToken = jwt.sign(adminInfo, process.env.JWT_SECRET);
  
-       const cookieOptions = {
-         httpOnly: true,
-         expires: new Date(Date.now() + 7200000), // expire dns 2h = 7200000 ms
-       };
+  //      const cookieOptions = {
+  //        httpOnly: true,
+  //        expires: new Date(Date.now() + 7200000), // expire dns 2h = 7200000 ms
+  //      };
  
-       res
-         .cookie('usertoken', adminToken, cookieOptions)
-         .json({
-          message: "Successfully logged in",
-          admin: adminInfo,
-          adminToken: adminToken,
-        });
+  //      res
+  //        .cookie('usertoken', adminToken, cookieOptions)
+  //        .json({
+  //         message: "Successfully logged in",
+  //         admin: adminInfo,
+  //         adminToken: adminToken,
+  //       });
 
-    } catch (error) {
-      res.status(400).json({ message: 'Something went wrong', error });
-    }
-  }, 
+  //   } catch (error) {
+  //     res.status(400).json({ message: 'Something went wrong', error });
+  //   }
+  // }, 
 
 
 /*

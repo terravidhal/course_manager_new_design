@@ -14,7 +14,6 @@ const {
     findStudentsByManyId,
     deleteOneSpecificStudent,
     updateExistingStudent,
-    findAllStudentsByRoleStudent,
   } = require("../controllers/student.controller");
 
 

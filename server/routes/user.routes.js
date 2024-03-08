@@ -8,7 +8,6 @@
 // 2) Importing Controller Methods
 const {
   register,
-  login,
 } = require("../controllers/user.controller");
 
 //3) importing authenticate methods
@@ -23,7 +22,7 @@ const { checkPermissions } = require('../config/jwt.config');
 module.exports = app => {
     app.post("/api/registerAdmin", register);  
 
-    app.post("/api/loginAdmin", login);  
+    // app.post("/api/loginAdmin", login);  
 
    // app.get("/api/users",authenticate, checkPermissions('admin'), findAllUsers);
   //  app.get('/api/users/:id',authenticate, checkPermissions('admin'), findOneSingleUser);

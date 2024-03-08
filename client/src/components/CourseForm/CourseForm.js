@@ -255,7 +255,6 @@ const handleDurationErrors = (e) =>{
       <div className="CourseForm">
         <form onSubmit={onSubmitHandler}>
             <div className="form-left">
-
                { errors2.errors? 
                       <p style={{color:"#f79623",fontWeight:"bold"}}>{errors2.errors}</p>
                       : null
@@ -268,7 +267,6 @@ const handleDurationErrors = (e) =>{
                       : null
                } 
               </div>
-
               <div className='field'>
                <label>Level :</label><br/>
                <input type="number" value={level} onChange = {(e)=>handleLevelErrors(e)}/>
@@ -277,8 +275,6 @@ const handleDurationErrors = (e) =>{
                       : null
                } 
               </div>
-
-
               <div className='field'>
                <label>Description :</label><br/>
                <input className='desc' type="text" value={description} onChange = {(e)=>handleDescriptionErrors(e)}/>
@@ -287,10 +283,7 @@ const handleDurationErrors = (e) =>{
                       : null
                }
               </div>
-
-
               <div className='field'>
-               {/* <label>Instructor :</label><br/> */}
                <input type="hidden" value={instructor}  onChange = {(e)=>setInstructor(e.target.value)}/>
                {
                 iscreatePage === false ?
@@ -301,7 +294,6 @@ const handleDurationErrors = (e) =>{
                    <option value={instructId}>Instructor</option> : null } 
                </select> : null }
               </div>
-
               <div className='field'>
                <label>DayOfWeek :</label><br/>
                <input type="date" value={dayOfWeek} onChange = {(e)=>handleDayOfWeekErrors(e)}/>
@@ -310,7 +302,6 @@ const handleDurationErrors = (e) =>{
                       : null
                }
               </div>
-
               <div className='field'>
                <label>Type of course :</label><br/>
                <select name="" id="" value={typeOfCourse} onChange = {(e)=>setTypeOfCourse(e.target.value)}>
@@ -322,67 +313,6 @@ const handleDurationErrors = (e) =>{
                       : null
                }
               </div>
-
-              <Button courseId="" create={create} update={update} 
-                deletes={deletes}
-                isActive={isActive}
-                successCallback={() => console.log('form')}/>
-              </div>
-
-            <div className="form-right">
-             
-              <div className='field'>
-               <label>Link Meeting :</label><br/>
-               <input type="text" value={linkMeeting} onChange = {(e)=>setLinkMeeting(e.target.value)}/>
-              </div>
-
-              <div className='field'>
-               <label>Documents Link :</label><br/>
-               <input type="text" value={documentsLink} onChange = {(e)=>setDocumentsLink(e.target.value)}/>
-              </div>
-
-              <div className='field'>
-               <label>Field :</label><br/>
-               <select name="" id="" value={field} onChange = {(e)=>setField(e.target.value)}>
-                   <option value="Web developement">Web developement</option>
-                   <option value="data analyst">data analyst</option>
-                   <option value="ux design">ux design</option>
-               </select>
-               { errors.field ? 
-                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.field.message}</p>
-                      : null
-               }
-              </div>
-
-
-              <div className='field'>
-               <label>start Time :</label><br/>
-               <input type="time" value={startTime} onChange = {(e)=>handleStartTimeErrors(e)}/>
-               { errors.startTime ? 
-                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.startTime.message}</p>
-                      : null
-               }
-              </div>
-
-              <div className='field'>
-               <label>End Time :</label><br/>
-               <input type="time" value={endTime} onChange = {(e)=>handleEndTimeErrors(e)}/>
-               { errors.endTime ? 
-                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.endTime.message}</p>
-                      : null
-               }
-              </div>
-
-              <div className='field'>
-               <label>Duration :</label><br/>
-               <input type="number" value={duration} onChange = {(e)=>handleDurationErrors(e)}/>
-               { errors.duration ? 
-                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.duration.message}</p>
-                      : null
-               }
-              </div>
-
-
               {
                 iscreatePage === false ?
                  <div className='field'>
@@ -406,7 +336,56 @@ const handleDurationErrors = (e) =>{
                  :
                  null
               }
-
+              </div>
+            <div className="form-right">
+              <div className='field'>
+               <label>Link Meeting :</label><br/>
+               <input type="text" value={linkMeeting} onChange = {(e)=>setLinkMeeting(e.target.value)}/>
+              </div>
+              <div className='field'>
+               <label>Documents Link :</label><br/>
+               <input type="text" value={documentsLink} onChange = {(e)=>setDocumentsLink(e.target.value)}/>
+              </div>
+              <div className='field'>
+               <label>Field :</label><br/>
+               <select name="" id="" value={field} onChange = {(e)=>setField(e.target.value)}>
+                   <option value="Web developement">Web developement</option>
+                   <option value="data analyst">data analyst</option>
+                   <option value="ux design">ux design</option>
+               </select>
+               { errors.field ? 
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.field.message}</p>
+                      : null
+               }
+              </div>
+              <div className='field'>
+               <label>start Time :</label><br/>
+               <input type="time" value={startTime} onChange = {(e)=>handleStartTimeErrors(e)}/>
+               { errors.startTime ? 
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.startTime.message}</p>
+                      : null
+               }
+              </div>
+              <div className='field'>
+               <label>End Time :</label><br/>
+               <input type="time" value={endTime} onChange = {(e)=>handleEndTimeErrors(e)}/>
+               { errors.endTime ? 
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.endTime.message}</p>
+                      : null
+               }
+              </div>
+              <div className='field'>
+               <label>Duration :</label><br/>
+               <input type="number" value={duration} onChange = {(e)=>handleDurationErrors(e)}/>
+               { errors.duration ? 
+                      <p style={{color:"#f79623",fontWeight:"bold"}}>{errors.duration.message}</p>
+                      : null
+               }
+              </div>
+              <Button courseId="" create={create} update={update} 
+                deletes={deletes}
+                isActive={isActive}
+                successCallback={() => console.log('form')}/>
             </div>
         </form>
       </div>

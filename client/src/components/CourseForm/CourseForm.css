@@ -67,4 +67,8 @@
     flex-direction: column;
     align-items: start;
   }
+   .UpdatePageCourse .page-top {
+    flex-direction: column;
+    align-items: start !important;
+  }
 }

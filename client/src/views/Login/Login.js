@@ -41,7 +41,11 @@ const Login = (props)=>{
             navigate("/wait-verification");
          }   
 
-        } else{
+        } else if(res.data.admin){
+          localStorage.setItem('USER_OBJ', JSON.stringify(res.data.admin));
+          navigate("/admin-dashboard");
+        }
+        else{
           console.error("Unexpected response:", res.data);
           // Handle potential errors here
         }   

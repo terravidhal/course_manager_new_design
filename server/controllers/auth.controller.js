@@ -10,6 +10,8 @@ const StudentModel = require("../models/student.model");
 
 const InstructorModel = require("../models/instructor.model");
 
+const AdminModel = require("../models/user.model");
+
 //const UserModel = require("../models/user.model")
 
 // 3) Exporting Controller function
@@ -22,7 +24,7 @@ module.exports = {
       // Recherchez l'utilisateur dans les deux collections
       const student = await StudentModel.findOne({ email });
       const instructor = await InstructorModel.findOne({ email });
-   
+      const admin = await AdminModel.findOne({ email });
 
       if (student) {
         // Utilisateur trouvé : c'est un étudiant
@@ -91,7 +93,37 @@ module.exports = {
           instructorToken: instructorToken
         });
 
-      } else {
+      } else if(admin){
+             // verifie le password
+            const isPasswordValid = await bcrypt.compare(password, admin.password);
+  
+             if (!isPasswordValid) {
+               return res.status(400).json({ message: "Incorrect email or password" });
+             }
+           // Générez un jeton JWT
+           const adminInfo = {
+             _id: admin._id,
+             name: admin.name,
+             role: 'admin', // Ajoutez le rôle de l'utilisateur (admin)
+           };
+
+           const adminToken = jwt.sign(adminInfo, process.env.JWT_SECRET);
+ 
+           const cookieOptions = {
+             httpOnly: true,
+             expires: new Date(Date.now() + 7200000), // expire dns 2h = 7200000 ms
+           };
+ 
+           // Redirigez vers /admin-dashboard avec le jeton dans le cookie
+           res
+             .cookie('usertoken', adminToken, cookieOptions)
+             .json({
+              message: "Successfully logged in",
+              admin: adminInfo,
+              adminToken: adminToken,
+            });
+      }
+      else {
         // Aucun utilisateur trouvé : affichez un message d'erreur
         res.status(400).json({ message: "Incorrect email or password" });
       }

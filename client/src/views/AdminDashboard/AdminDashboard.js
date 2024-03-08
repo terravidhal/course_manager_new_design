@@ -172,7 +172,7 @@ const AdminDashboard = () => {
           
           console.log("deconnexion",res.data.message);
           localStorage.removeItem('USER_OBJ');
-           navigate("/route/log/loaded25");
+          navigate("/login_page");
 
       } else{
         console.error("Unexpected response:", res.data);
@@ -239,36 +239,36 @@ toggle.onclick = function () {
                     </a>
                 </li>
                 <li className="crs">
-                    <a href="#">
+                    <Link to="">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
                         <span class="title">Manage Courses</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="ins">
-                    <a href="#">
+                     <Link to="">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
                         <span class="title">Manage Instructors</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="stud">
-                    <a href="#">
-                        <span class="icon">
+                     <Link to="">
+                       <span class="icon">
                         <ion-icon name="people-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Manage Students</span>
-                    </a>
+                      </Link>
                 </li>
                 <li>
-                    <a href="#">
+                     <Link to="">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
                         <span class="title" onClick={logout}>Sign Out</span>
-                    </a>
+                      </Link>
                 </li>
             </ul>
         </div>
