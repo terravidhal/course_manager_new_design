@@ -37,14 +37,14 @@ const DetailsPageStudent = () => {
           </Link>
       </div>  
         
-      <div className="page-top">
-        <h2>{OneStudent.name} students</h2>
-      </div>  
+      
       <div className="page-content">
+      <div className="details-img">
+          <img src="/assets/images/OIG1.jfif" alt="" />
+        </div>
         <div className="fields">
             <p><span className='infos'>name:</span>{OneStudent.name}</p>
             <p><span className='infos'>email:</span>{OneStudent.email}</p>
-            {/* <p><span className='infos'>password:</span> {OneStudent.password}</p> */}
             <p><span className='infos'>fieldOfStudy:</span> {OneStudent.fieldOfStudy}</p>
             <p><span className='infos'>levelStudent:</span> {OneStudent.levelStudent}</p>
         </div>

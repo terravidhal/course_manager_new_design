@@ -57,12 +57,13 @@ const CreatePageStudent = (props)=>{
   
   return(
     <div className="CreatePageStudent">
-      <h2>create Student</h2>
-      <Link to="/admin-dashboard">
-             dashboard-admin
-      </Link>
-
-      
+      <div className="page-top">
+        <h2>create Student</h2>
+        <Link to="/admin-dashboard">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
+        </Link>
+      </div>
+    
       
       {
         confirmReg?
@@ -70,7 +71,7 @@ const CreatePageStudent = (props)=>{
         :null
       }
       <form onSubmit={CreateStud}>
-        <div>
+        <div className="field">
           <label>name</label>
           {
             errs.name?
@@ -79,7 +80,7 @@ const CreatePageStudent = (props)=>{
           }
           <input type="text" name="name" value={user.name} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Email</label>
           {
             errs.email?
@@ -88,7 +89,7 @@ const CreatePageStudent = (props)=>{
           }
           <input type="email" name="email" value={user.email} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>field Of Study</label>
           {
             errs.fieldOfStudy?
@@ -101,7 +102,7 @@ const CreatePageStudent = (props)=>{
                <option value="ux design">ux design</option>
           </select>
         </div>
-        <div>
+        <div className="field">
           <label>level Student</label>
           {
             errs.levelStudent?
@@ -110,7 +111,7 @@ const CreatePageStudent = (props)=>{
           }
           <input type="number" name="levelStudent" value={user.levelStudent} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Password</label>
           {
             errs.password?
@@ -119,7 +120,7 @@ const CreatePageStudent = (props)=>{
           }
           <input type="password" name="password" value={user.password} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Confirm Password</label>
           {
             errs.confirmPassword?

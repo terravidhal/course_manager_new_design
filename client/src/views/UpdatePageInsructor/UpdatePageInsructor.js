@@ -78,12 +78,13 @@ const UpdatePageInsructor = (props)=>{
   
    
   return(
-    <div>
-      <h2>update instuctor</h2>
-      <Link to="/admin-dashboard">
-             admin-dashboard 
-      </Link>
-
+    <div className="UpdatePageInsructor">
+       <div className="page-top">
+        <h2>update instuctor</h2>
+        <Link to="/admin-dashboard">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
+        </Link>
+      </div>
      
       
       {
@@ -94,7 +95,7 @@ const UpdatePageInsructor = (props)=>{
 
       {loaded === true ? 
       <form onSubmit={updateInstructor}>
-        <div>
+        <div className="field">
           <label>name</label>
           {
             errs.name?
@@ -103,7 +104,7 @@ const UpdatePageInsructor = (props)=>{
           }
           <input type="text" name="name" value={user.name} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Email</label>
           {
             errs.email?
@@ -112,7 +113,7 @@ const UpdatePageInsructor = (props)=>{
           }
           <input type="email" name="email" value={user.email} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>isInstructor</label>
           {
             errs.isInstructor?
@@ -124,7 +125,7 @@ const UpdatePageInsructor = (props)=>{
                <option value="true">true</option>
           </select>
         </div>
-        <div>
+        <div className="field">
           <label>Password</label>
           {
             errs.password?
@@ -133,7 +134,7 @@ const UpdatePageInsructor = (props)=>{
           }
           <input type="text" name="password" value={user.password} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Confirm Password</label>
           {
             errs.confirmPassword?

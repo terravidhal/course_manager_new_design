@@ -31,21 +31,21 @@ const DetailsPageInsructor = () => {
   return(
     <div className="DetailsPageInsructor">
       <div className="page-top">
-        <h1>Speedy Instructors</h1>
+        <h1>Details Instructors</h1>
          <Link to="/admin-dashboard">
-           back to Home
+         <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
           </Link>
       </div>  
         
-      <div className="page-top">
-        <h2>{OneInstructor.name} instructors</h2>
-      </div>  
+       
       <div className="page-content">
+      <div className="details-img">
+          <img src="/assets/images/OIG1.jfif" alt="" />
+        </div>
         <div className="fields">
             <p><span className='infos'>name:</span>{OneInstructor.name}</p>
             <p><span className='infos'>email:</span>{OneInstructor.email}</p>
             <p><span className='infos'>isInstructor:</span>{OneInstructor.isInstructor}</p>
-            {/* <p><span className='infos'>password:</span> {OneInstructor.password}</p> */}
         </div>
       </div>
     </div>

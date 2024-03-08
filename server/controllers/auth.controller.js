@@ -39,7 +39,6 @@ module.exports = {
       const studentInfo = {
         _id: student._id,
         name: student.name,
-       // email: student.email,
         role: 'student', // Ajoutez le rôle de l'utilisateur (étudiant)
       };
 

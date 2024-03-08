@@ -91,7 +91,6 @@ useEffect(() => {
     console.log('new Date(dayOfWeek).getDay()', new Date(dayOfWeek).getTime());
     console.log('new Date().getDay()', new Date().getTime());
     console.log('dayOfWeek', dayOfWeek);
-    console.log('isActive', isActive);
   }, [name,level,description, 
      duration, dayOfWeek, startTime,endTime
     ]);
