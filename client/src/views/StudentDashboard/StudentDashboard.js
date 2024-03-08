@@ -12,8 +12,7 @@ const StudentDashboard = () => {
   const [display, setDisplay] = useState("courses");
   const navigate = useNavigate();
 
- /* const cookies = new Cookies();
-  const userObjsId = cookies.get("USER_OBJ")._id || ''; */
+
 
 
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
@@ -23,27 +22,7 @@ const StudentDashboard = () => {
   console.log("userObjRole+++++++++", userObjsRole);
   console.log("userObjsId+++++++++", userObjsId);
 
-/**
- * IMPORTANT : MAINTENANT QUE NOUS UTILISONS DES COOKIES 
- * POUR L'AUTHENTIFICATION ET L'AUTORISATION, NOUS ASSURERONS 
- * QUE CHAQUE DEMANDE EST ENVOYÉE AVEC { withCredentials: true }. 
- * CELA ENVOYERA LES COOKIES À CHAQUE DEMANDE AFIN QUE NOTRE 
- * MIDDLEWARE VÉRIFIE QUI EST CONNECTÉ. 
-  */  
- 
-  
 
-  // get all courses by student
-  /*
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/courses/student/" + userObjsId,{withCredentials: true})
-      .then((res) => {
-        setAllCourses(res.data.coursesByStudent);
-        console.log('r+++++++', res.data.coursesByStudent)
-      })
-      .catch((err) => console.log(err));
-  }, []); */
 
 
    // check and update courses status
@@ -116,20 +95,7 @@ const StudentDashboard = () => {
     });
   };
 
-/*
-  const updateCourseStatuses2 = (courses) => {
-    return courses.map((course) => {
-      const currentDate = new Date().getDay(); // Get current day of the week
-      const courseDate = new Date(course.dayOfWeek).getDay(); // Get day of the week from course
-  
-      // Update status if current date is past the course's day
-      if (currentDate > courseDate) {
-        course.status = 'resolved';
-      }
-  
-      return course;
-    });
-  } */
+
 
 
  
@@ -139,14 +105,11 @@ const StudentDashboard = () => {
     axios.post('http://localhost:8000/api/logout',{},{withCredentials: true})
     .then((res)=>{
       //console.log("res", res);
-      console.log("deconnexion",res.data.message);
-     // console.log("is res data message",res.data.message);
-      // cookies.remove("USER_OBJ");
+       console.log("deconnexion",res.data.message);
        localStorage.removeItem('USER_OBJ');
       navigate("/login_page");
     })
     .catch((err)=>{
-     // console.log("+++++++++++",err.response);
       console.log("Erreur de déconnexion +++++++++++",err);
     })
 };
