@@ -37,5 +37,5 @@ color: rgba(255, 255, 255, 0.733);
 }
 .UpdatePageCourse li button.Remove{
    color:white;
-   background-color: var(--orange);
+   background-color: var(--blue);
 }

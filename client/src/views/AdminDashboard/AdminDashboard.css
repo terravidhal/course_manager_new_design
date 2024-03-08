@@ -3,7 +3,8 @@
 
 
 :root {
-  --blue: #1c71c6;
+  --blue: #1eb2a6;
+  --blue2: #1c71c6;
   --bluess: #52898b;
   --blues: #2a2185;
   --geen: #01221f;
@@ -117,7 +118,7 @@ body {
 } 
 
 .AdminDashboard .navigation ul li.terra a {
-  color: var(--orange);
+  color: var(--blue);
 } 
 
 .AdminDashboard .navigation ul li a .icon {

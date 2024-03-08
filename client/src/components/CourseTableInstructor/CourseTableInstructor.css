@@ -38,6 +38,7 @@
  }
  .CourseTableInstructor  td.options a,.CourseTableInstructor  td.instruct a {
    font-size: 1.5rem;
+   color: var(--blue);
  }
  .CourseTableInstructor  td.options a.btt.orange,.CourseTableInstructor  td.instruct a.btt.orange {
     position: relative;

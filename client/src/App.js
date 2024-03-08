@@ -31,6 +31,7 @@ import LoginAdmin from "./views/LoginAdmin/LoginAdmin";
 import RegisterAdmin from "./views/RegisterAdmin/RegisterAdmin";
 import RegisterInstructor from "./views/RegisterInstructor/RegisterInstructor";
 import UpdatePageCourse from "./views/UpdatePageCourse/UpdatePageCourse";
+import HomeHome from "./components/HomeHome/HomeHome";
 
 
 
@@ -133,7 +134,8 @@ function App() {
                 
                : null
               }
-           <Route path="/" element={<Navigate replace to="/register_instructor"  />} />  {/* redirection */}
+           <Route path="/" element={<Navigate replace to="/home"  />} />  {/* redirection */}
+           <Route path="/home" element={<HomeHome />} />
            <Route path="/register_instructor" element={<RegisterInstructor />} />
            <Route path="/register_student" element={<RegisterStudent />} />
            <Route path="/login_page" element={<Login />} />
