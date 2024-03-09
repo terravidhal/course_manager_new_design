@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 
 
-
-
 const InstructorTable = (props) => {
   const { allInstructors, deleteInstructor } = props;
 
@@ -43,7 +41,6 @@ const InstructorTable = (props) => {
     </div>
   );
 };
-
 
 
 export default InstructorTable;

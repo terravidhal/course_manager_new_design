@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './DetailsPageCourse.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-//import Cookies from "universal-cookie";
 
 
 const DetailsPageCourse = () => {
- /* const cookies = new Cookies();
-  const userObjsRole = cookies.get("USER_OBJ").role || ''; */
 
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjsRole = userObjs.role || 'default';
@@ -21,7 +18,7 @@ const DetailsPageCourse = () => {
   const [OneCourse, setOneCourse] = useState({})
   const {id} = useParams(); 
   const navigate = useNavigate();
-  const [loaded, setLoaded] = useState(false); // check if the data is available
+  const [loaded, setLoaded] = useState(false); 
 
   
   useEffect(() => {
@@ -29,14 +26,11 @@ const DetailsPageCourse = () => {
         .then( res => {
           console.log("u++++++++++",res.data.oneSingleCourse);
           setOneCourse(res.data.oneSingleCourse);
-          setLoaded(true); // data available => set "true"
+          setLoaded(true); 
           console.log("y++++++++++",OneCourse.students);
         })
         .catch( err => console.log(err) );
   }, [id]); 
-
-
-
 
 
  

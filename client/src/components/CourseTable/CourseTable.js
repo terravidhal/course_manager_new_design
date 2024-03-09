@@ -1,12 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./CourseTable.css";
 import { Link } from "react-router-dom";
 
  
-
-
-
-
 const CourseTable = (props) => {
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjRole = userObjs.role || 'default';
@@ -20,10 +16,6 @@ const CourseTable = (props) => {
   const { allCourses, deleteCourse } = props;
 
   
-  
-   
- 
-
 
   return (
     <div className="CourseTable">
@@ -90,9 +82,6 @@ const CourseTable = (props) => {
      
   );
 };
-
-
-
 
 
 export default CourseTable;

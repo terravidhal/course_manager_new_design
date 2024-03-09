@@ -10,8 +10,6 @@
   align-items: center;
   color: var(--blue);
 }
-.RegisterStudent .page-top h1 {
-}
 .RegisterStudent .page-top a {
   font-size: 1.5rem;
   color: var(--oranges);

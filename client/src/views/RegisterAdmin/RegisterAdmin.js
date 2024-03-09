@@ -21,7 +21,7 @@ const RegisterAdmin = (props)=>{
     const handleChange = (e)=>{
       setUser({
         ...user,
-        [e.target.name]: e.target.value // e.target.name => recupere la valeur du champ "name" de l'input
+        [e.target.name]: e.target.value 
       })
     }
   
@@ -59,7 +59,6 @@ const RegisterAdmin = (props)=>{
       <Link to="/route/log/loaded25">
              login admin
       </Link>
-
       {
         confirmReg?
         <h1 style={{color: "grey"}}>{confirmReg}</h1>

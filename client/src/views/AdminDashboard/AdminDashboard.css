@@ -1,7 +1,3 @@
-
-/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"); */
-
-
 :root {
   --blue: #1eb2a6;
   --blue2: #1c71c6;
@@ -16,44 +12,32 @@
   --black2: #999;
 }
 
-
- * {
-  font-family: "Ubuntu", sans-serif; 
-  /* margin: 0;
-  padding: 0; */
+* {
+  font-family: "Ubuntu", sans-serif;
   box-sizing: border-box;
-} 
+}
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  /* background-color: var(--blue); */
-} 
+}
 
 .container {
   position: relative;
   width: 100%;
 }
-.blue-color{
+.blue-color {
   font-weight: bold;
   color: var(--blue);
 }
-.relative{
+.relative {
   position: relative;
 }
-.orange-color{
+.orange-color {
   font-weight: bold;
   color: var(--white);
   font-size: 1.5rem;
-  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-  -webkit-text-stroke: 1px  var(--white);
-    /* text-shadow:
-       3px 3px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;  */
-  
+  -webkit-text-stroke: 1px var(--white);
 }
 
 .AdminDashboard .navigation {
@@ -74,29 +58,27 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  /**/
   padding-left: 0;
 }
 
 .AdminDashboard .navigation ul li {
-   position: relative;
+  position: relative;
   width: 97%;
   list-style: none;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px; 
+  border-bottom-right-radius: 0px;
 }
 
-.AdminDashboard  .navigation ul li,
+.AdminDashboard .navigation ul li,
 .AdminDashboard .navigation ul li.hovered {
   background-color: var(--blue);
-} 
- 
+}
+
 .AdminDashboard .navigation ul li.terra {
   background-color: var(--white);
-} 
-
+}
 
 .AdminDashboard .navigation ul li:nth-child(1) {
   margin-bottom: 40px;
@@ -115,11 +97,11 @@ body {
 .AdminDashboard .navigation ul li a,
 .AdminDashboard .navigation ul li.hovered a {
   color: var(--white);
-} 
+}
 
 .AdminDashboard .navigation ul li.terra a {
   color: var(--blue);
-} 
+}
 
 .AdminDashboard .navigation ul li a .icon {
   position: relative;
@@ -142,7 +124,6 @@ body {
   text-align: start;
   white-space: nowrap;
 }
-
 
 .AdminDashboard .main {
   position: absolute;
@@ -325,7 +306,6 @@ body {
 .AdminDashboard .details .recentOrders table tbody tr:hover {
   background: #efefef;
   transition: all 0.5s;
-
 }
 .AdminDashboard .details .recentOrders table tr td {
   padding: 10px;
@@ -376,8 +356,6 @@ body {
   width: 64px;
 }
 
-
-
 @media (max-width: 991px) {
   .AdminDashboard .navigation {
     left: -300px;
@@ -386,53 +364,53 @@ body {
     width: 300px;
     left: 0;
   }
-  .AdminDashboard  .main {
+  .AdminDashboard .main {
     width: 100%;
     left: 0;
   }
-  .AdminDashboard  .main.active {
+  .AdminDashboard .main.active {
     left: 300px;
   }
-  .AdminDashboard  .cardBox {
+  .AdminDashboard .cardBox {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .AdminDashboard  .details {
+  .AdminDashboard .details {
     grid-template-columns: 1fr;
   }
-  .AdminDashboard  .recentOrders {
+  .AdminDashboard .recentOrders {
     overflow-x: auto;
   }
-  .AdminDashboard  .status.inProgress {
+  .AdminDashboard .status.inProgress {
     white-space: nowrap;
   }
 }
 
 @media (max-width: 480px) {
-  .AdminDashboard  .cardBox {
+  .AdminDashboard .cardBox {
     grid-template-columns: repeat(1, 1fr);
   }
-  .AdminDashboard   .cardHeader h2 {
+  .AdminDashboard .cardHeader h2 {
     font-size: 20px;
   }
-  .AdminDashboard  .user {
+  .AdminDashboard .user {
     min-width: 40px;
   }
-  .AdminDashboard  .navigation {
+  .AdminDashboard .navigation {
     width: 100%;
     left: -100%;
     z-index: 1000;
   }
-  .AdminDashboard  .navigation.active {
+  .AdminDashboard .navigation.active {
     width: 100%;
     left: 0;
   }
-  .AdminDashboard  .toggle {
+  .AdminDashboard .toggle {
     z-index: 10001;
   }
-  .AdminDashboard  .main.active .toggle {
+  .AdminDashboard .main.active .toggle {
     color: #fff;
     position: fixed;
     right: 0;

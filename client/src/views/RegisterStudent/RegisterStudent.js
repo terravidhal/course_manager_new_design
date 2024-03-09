@@ -21,7 +21,7 @@ const RegisterStudent = (props)=>{
     const handleChange = (e)=>{
       setUser({
         ...user,
-        [e.target.name]: e.target.value // e.target.name => recupere la valeur du champ "name" de l'input
+        [e.target.name]: e.target.value 
       })
     }
   
@@ -56,7 +56,7 @@ const RegisterStudent = (props)=>{
   
   return(
     <div className="RegisterStudent" style={{
-      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
+      backgroundImage: 'url("./assets/images/bg_2.jpg.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
@@ -73,9 +73,6 @@ const RegisterStudent = (props)=>{
          <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
          </Link>
       </div>
-      
-
-      
       
       {
         confirmReg?

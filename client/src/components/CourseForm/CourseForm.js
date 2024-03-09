@@ -26,7 +26,7 @@ const CourseForm = (props) => {
           initialStudents,
           initialAvailableStudents,
           requestPostorPatch,  // requestPostorPatch (lifting state)
-          setErrors, // setErrors
+          setErrors, 
           errors ,
           errors2 ,
           create,
@@ -35,7 +35,7 @@ const CourseForm = (props) => {
           iscreatePage,
           userObjsRole
         } = props;
-  const [name, setName] = useState(initialName);  // initialName = ""
+  const [name, setName] = useState(initialName);  
   const [level, setLevel] = useState(initialLevel);  
   const [description, setDescription] = useState(initialDescription);
   const [field, setField] = useState(initialField);
@@ -66,12 +66,12 @@ useEffect(() => {
     .then((res) => {
       console.log('t+++++', res.data);
       setavailableStudents(res.data);
-      setLoaded(true); // data available => set "true"
+      setLoaded(true); 
     })
     .catch((err) => console.log('err all users role students : ',err));
-}, []); // important!  //students
+}, []); 
   
-// Fonctions de gestion de la sélection des étudiants
+// Student selection management functions
 //add students
   const handleStudentSelection = (e,studentId) => {
     e.preventDefault();
@@ -184,7 +184,7 @@ useEffect(() => {
   
    
    if (selectedDate < currentDate) {
-      setErrors({...errors,dayOfWeek:{ message: "La date doit être supérieure ou égale à la date actuelle" }});
+      setErrors({...errors,dayOfWeek:{ message: "Date must be greater than or equal to current date" }});
    } 
    else  {
       setErrors({...errors,dayOfWeek:{ message: "" }});
@@ -205,7 +205,7 @@ useEffect(() => {
    console.log('endTime',endTime);
    
    if (selectedTime < currentTime || selectedTime >= currentTime2 ) {
-      setErrors({...errors,startTime:{ message: "startTime doit être supérieure ou égale à 08:00 et doit être inférieure au endTime" }});
+      setErrors({...errors,startTime:{ message: "startTime must be greater than or equal to 08:00 and less than endTime" }});
    } 
    else  {
       setErrors({...errors,startTime:{ message: "" }});
@@ -224,7 +224,7 @@ useEffect(() => {
  
    
    if (selectedTime <= currentTime2 || selectedTime > currentTime ) {
-      setErrors({...errors,endTime:{ message: "endTime doit être supérieure à startime et inférieure ou égale à 18:00" }});
+      setErrors({...errors,endTime:{ message: "endTime must be greater than startime and less than or equal to 18:00" }});
    } 
    else  {
       setErrors({...errors,endTime:{ message: "" }});

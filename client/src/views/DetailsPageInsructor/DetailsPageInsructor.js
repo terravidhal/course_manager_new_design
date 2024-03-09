@@ -9,7 +9,7 @@ const DetailsPageInsructor = () => {
   const [OneInstructor, setOneInstructor] = useState({})
   const {id} = useParams(); 
   const navigate = useNavigate();
-  const [loaded, setLoaded] = useState(false); // check if the data is available
+  const [loaded, setLoaded] = useState(false); 
 
   
   useEffect(() => {
@@ -17,17 +17,13 @@ const DetailsPageInsructor = () => {
         .then( res => {
           console.log("u++++++++++",res.data.oneSingleInstructor);
           setOneInstructor(res.data.oneSingleInstructor);
-          setLoaded(true); // data available => set "true"
+          setLoaded(true); 
           console.log("y++++++++++",OneInstructor.instructors);
         })
         .catch( err => console.log(err) );
   }, [id]); 
 
 
-
-
-
- 
   return(
     <div className="DetailsPageInsructor">
       <div className="page-top">
@@ -36,8 +32,6 @@ const DetailsPageInsructor = () => {
          <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
           </Link>
       </div>  
-        
-       
       <div className="page-content">
       <div className="details-img">
           <img src="/assets/images/OIG1.jfif" alt="" />

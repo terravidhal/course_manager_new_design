@@ -20,7 +20,7 @@ const CreatePageInstructor = (props)=>{
     const handleChange = (e)=>{
       setUser({
         ...user,
-        [e.target.name]: e.target.value // e.target.name => recupere la valeur du champ "name" de l'input
+        [e.target.name]: e.target.value 
       })
     }
   
@@ -55,12 +55,9 @@ const CreatePageInstructor = (props)=>{
       <div className="page-top">
         <h2>create instuctor</h2>
         <Link to="/admin-dashboard">
-        <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
+          <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
         </Link>
       </div>
-
-     
-      
       {
         confirmReg?
         <h1 style={{color: "grey"}}>{confirmReg}</h1>

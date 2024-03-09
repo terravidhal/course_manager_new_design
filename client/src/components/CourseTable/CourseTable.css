@@ -1,100 +1,19 @@
-
-
-
-
-/*
-
-.CourseTable{
-   
-}
-.CourseTable table{
-   margin-top: 30px;
-   border-bottom: 1px solid;
-}
-.CourseTable table thead tr th{
-   border: 1px solid;
-   border-bottom: 0px solid;
-}
-.CourseTable table tbody tr td{
-   border: 1px solid;
-    border-bottom: 0px solid; 
-}   
-
-.CourseTable table tbody tr td:nth-child(1),
-.CourseTable table tbody tr td:nth-child(2),
-.CourseTable table tbody tr td:nth-child(3){
-   border-top: 0px solid;
-}
-.CourseTable tr > td.actions{
-   vertical-align: middle;
-} 
-.CourseTable button.blue-btn{
-   background-color: #337180;
-   position: relative;
-   padding: 5px 10px;
-   text-decoration: none;
-   color: white;
-   border-radius: 6px;
-   border: none;
-}
-.CourseTable button.red-btn{
-   background-color: rgb(182, 182, 70);
-   position: relative;
-   padding: 5px 10px;
-   text-decoration: none;
-   color: white;
-   border-radius: 6px;
-   border: none;
-}
-
-.CourseTable .btt{
-   font-weight: bold;
-}
-.CourseTable .btt.violet{
-   color: rgb(130, 9, 217);
-}
-.CourseTable .btt.brown{
-   color: brown;
-}
-.CourseTable .btt.blue{
-   color: rgb(0, 110, 255);
-}
-.CourseTable .btt.orange{
-   color: orange;
-}
-.CourseTable .btt.vert{
-   background-color: transparent;
-   position: relative;
-   text-decoration: none;
-   color: green;
-   border-radius: 6px;
-   border: none;
-   text-decoration: underline;
-   font-size: 0.9rem;
-   cursor: pointer;
-}
-*/
-
-.text-left{
+.text-left {
   text-align: left;
 }
-.text-center{
+.text-center {
   text-align: center !important;
 }
-.CourseTable  td.options a,.CourseTable  td.instruct a {
+.CourseTable td.options a,
+.CourseTable td.instruct a {
   font-size: 1.5rem;
   color: var(--blue);
 }
-.CourseTable  td.options a.btt.orange,.CourseTable  td.instruct a.btt.orange {
-   position: relative;
+.CourseTable td.options a.btt.orange,
+.CourseTable td.instruct a.btt.orange {
+  position: relative;
   left: -5px;
- }
-.CourseTable  td.options a button{
+}
+.CourseTable td.options a button {
   border: none;
 }
-
-
-
-
-
-

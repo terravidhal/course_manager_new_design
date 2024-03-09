@@ -1,7 +1,6 @@
 import React,{ useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
-//import Cookies from "universal-cookie";
 import "./LoginAdmin.css";
 
 
@@ -15,7 +14,6 @@ const LoginAdmin = (props)=>{
     const [errs2, setErrs2] = useState("");
     const navigate = useNavigate();
 
-    //const cookies = new Cookies();
   
    
   
@@ -32,7 +30,6 @@ const LoginAdmin = (props)=>{
       .then((res)=>{
        // console.log("res***************",res);
         console.log("res.data***************",res.data);
-      //  cookies.set('USER_OBJ', res.data.admin);
 
         localStorage.setItem('USER_OBJ', JSON.stringify(res.data.admin));
         navigate("/admin-dashboard");
@@ -40,7 +37,6 @@ const LoginAdmin = (props)=>{
       .catch((err)=>{
         console.error("Error logging in:", err);
         setErrs2(err.response.data.message)
-        //setErrorMessage(err.response.data.message);
       })
   };
 

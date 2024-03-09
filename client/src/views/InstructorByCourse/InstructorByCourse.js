@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './InstructorByCourse.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-//import Cookies from "universal-cookie";
 
 
 
 const InstructorByCourse = () => {
-/*  const cookies = new Cookies();
-  const userObjsRole = cookies.get("USER_OBJ").role || ''; */
 
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjsRole = userObjs.role || 'default';
@@ -22,37 +19,21 @@ const InstructorByCourse = () => {
   const [InstructByCourse, setInstructByCourse] = useState({});
   const {id} = useParams(); 
   const navigate = useNavigate();
-  const [loaded, setLoaded] = useState(false); // check if the data is available
+  const [loaded, setLoaded] = useState(false); 
 
   
-  
-/*
-  useEffect(() => {
-    axios.get("http://localhost:8000/api/instructors/" + id,{withCredentials: true})
-        .then( res => {
-          console.log("u++++++++++",res);
-          setInstructByCourse(res.data.oneSingleInstructor);
-          setLoaded(true); // data available => set "true"
-        })
-        .catch( err => console.log(err) );
-  }, [id]); */
-
-
   
   useEffect(() => {
     axios.get("http://localhost:8000/api/instructorOruser/" + id,{withCredentials: true})
         .then( res => {
           console.log("u++++++++++",res.data.result);
           setInstructByCourse(res.data.result);
-          setLoaded(true); // data available => set "true"
+          setLoaded(true); 
         })
         .catch( err => console.log(err) );
   }, [id]); 
   
   
-
-
-
  
   return(
     <div className="InstructorByCourse">
@@ -74,7 +55,6 @@ const InstructorByCourse = () => {
             )
         }
       </div>  
-         
       <div className="page-content">
           { loaded === true ? 
           <>

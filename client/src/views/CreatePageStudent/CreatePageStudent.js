@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './CreatePageStudent.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import Cookies from "universal-cookie";
 
 
 
@@ -23,7 +22,7 @@ const CreatePageStudent = (props)=>{
     const handleChange = (e)=>{
       setUser({
         ...user,
-        [e.target.name]: e.target.value // e.target.name => recupere la valeur du champ "name" de l'input
+        [e.target.name]: e.target.value 
       })
     }
   
@@ -63,8 +62,6 @@ const CreatePageStudent = (props)=>{
         <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
         </Link>
       </div>
-    
-      
       {
         confirmReg?
         <h1 style={{color: "grey"}}>{confirmReg}</h1>

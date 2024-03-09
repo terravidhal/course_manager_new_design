@@ -1,7 +1,6 @@
 import React,{ useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
-//import Cookies from "universal-cookie";
 import "./Login.css";
 
 
@@ -13,8 +12,6 @@ const Login = (props)=>{
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
-  
-   
   
     const login = (event) =>{
       event.preventDefault();
@@ -47,9 +44,7 @@ const Login = (props)=>{
         }
         else{
           console.error("Unexpected response:", res.data);
-          // Handle potential errors here
         }   
-       // navigate("/courses");
       })
       .catch((err)=>{
         console.error("Error logging in:", err);
@@ -57,57 +52,11 @@ const Login = (props)=>{
       })
   };
 
-  /*  const login2 = (event) =>{
-      event.preventDefault();
-      axios.post('http://localhost:8000/api/login',{
-        email: email,
-        password: password,
-      },
-      {
-        withCredentials: true,
-      })
-      .then((res)=>{
-       // console.log("res***************",res);
-        console.log("res.data***************",res.data);
-       // console.log("res.data2***************",res.data.instructor.isInstructor);
-       if ( res.data.student) {
-          
-          cookies.set('USER_OBJ', res.data.student);
-        //  await localStorage.setItem("USER_OBJ", JSON.stringify(res.data.student));
-           navigate("/student-dashboard");
-
-        }else if (res.data.instructor) {
-         if (res.data.instructor.isInstructor === "true") {
-              cookies.set('USER_OBJ', res.data.instructor);
-          //   await localStorage.setItem("USER_OBJ", JSON.stringify(res.data.instructor));
-          navigate("/instructor-dashboard");
-         } else {
-            cookies.set('USER_OBJ', res.data.instructor);
-          //   await localStorage.setItem("USER_OBJ", JSON.stringify(res.data.instructor));
-           navigate("/wait-verification");
-         }   
-
-        } else if(res.data.admin) {
-             cookies.set('USER_OBJ', res.data.admin);
-          //   await localStorage.setItem("USER_OBJ", JSON.stringify(res.data.admin));
-              navigate("/admin-dashboard");
-        }else{
-          console.error("Unexpected response:", res.data);
-          // Handle potential errors here
-        }   
-       // navigate("/courses");
-      })
-      .catch((err)=>{
-        console.error("Error logging in:", err);
-        //setErrorMessage(err.response.data.message);
-      })
-  }; */
-
 
   
   return(
     <div className="Login" style={{
-      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
+      backgroundImage: 'url("./assets/images/bg_1.jpg.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
@@ -124,9 +73,6 @@ const Login = (props)=>{
          <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
          </Link>
       </div>
-
-      
-
       <p className="error-text">{errorMessage? errorMessage : ""}</p>
       <form onSubmit={login}>
         <div className="field">

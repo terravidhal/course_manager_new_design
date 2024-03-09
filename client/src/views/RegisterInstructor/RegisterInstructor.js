@@ -58,7 +58,7 @@ const RegisterInstructor = (props)=>{
   
   return(
     <div className="RegisterInstructor" style={{
-      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
+      backgroundImage: 'url("./assets/images/bg_2.jpg.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',

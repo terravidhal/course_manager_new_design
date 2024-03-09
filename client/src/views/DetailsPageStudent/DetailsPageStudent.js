@@ -9,7 +9,7 @@ const DetailsPageStudent = () => {
   const [OneStudent, setOneStudent] = useState({})
   const {id} = useParams(); 
   const navigate = useNavigate();
-  const [loaded, setLoaded] = useState(false); // check if the data is available
+  const [loaded, setLoaded] = useState(false); 
 
   
   useEffect(() => {
@@ -17,14 +17,11 @@ const DetailsPageStudent = () => {
         .then( res => {
           console.log("u++++++++++",res.data.oneSingleStudent);
           setOneStudent(res.data.oneSingleStudent);
-          setLoaded(true); // data available => set "true"
+          setLoaded(true); 
           console.log("y++++++++++",OneStudent.students);
         })
         .catch( err => console.log(err) );
   }, [id]); 
-
-
-
 
 
  
@@ -36,8 +33,6 @@ const DetailsPageStudent = () => {
            back to Home
           </Link>
       </div>  
-        
-      
       <div className="page-content">
       <div className="details-img">
           <img src="/assets/images/OIG1.jfif" alt="" />
