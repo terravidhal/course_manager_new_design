@@ -16,7 +16,7 @@ const StudentsByCourse = () => {
   const [StudByCourse, setStudByCourse] = useState([]);
   const {id} = useParams(); 
   const navigate = useNavigate();
-  const [loaded, setLoaded] = useState(false); e
+  const [loaded, setLoaded] = useState(false); 
 
   
   useEffect(() => {
