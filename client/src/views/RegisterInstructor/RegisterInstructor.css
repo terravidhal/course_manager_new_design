@@ -126,13 +126,14 @@
  }
  
  @media (max-width: 991px) {
-   .RegisterInstructor form{
-     flex-direction: column;
-     width: 100%;
-    }
+    .RegisterInstructor form {
+        flex-direction: column;
+        width: 100%;
+      }
     .RegisterInstructor .page-top {
      flex-direction: column;
      align-items: start;
+     margin-bottom: 10px;
    }
     .UpdatePageCourse .page-top {
      flex-direction: column;

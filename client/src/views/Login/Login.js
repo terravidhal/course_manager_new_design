@@ -116,6 +116,7 @@ const Login = (props)=>{
       width: '100%',
       height: '100vh',
       position: 'relative',
+      overflowY: 'auto',
     }}>
       <div className="page-top">
          <h2>Login</h2>
