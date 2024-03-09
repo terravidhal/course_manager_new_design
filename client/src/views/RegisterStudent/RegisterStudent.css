@@ -36,6 +36,7 @@
 }
 .RegisterStudent .suggest{
     text-align: center;
+    width: 100%;
 }
 .RegisterStudent .suggest a{
     color: var(--blue);
@@ -134,6 +135,21 @@
  @media (max-width: 991px) {
    .RegisterStudent form{
      flex-direction: column;
+        width: 100%;
+        /* position: absolute;
+        left: 50%;
+        top: 83%;
+        transform: translate(-50%,-50%); */
+        overflow-y: auto;
+        height: 360px;
+    }
+   .RegisterStudent form{
+     flex-direction: column;
+        width: 100%;
+        /* position: absolute;
+        left: 50%;
+        top: 83%;
+        transform: translate(-50%,-50%); */
     }
     .RegisterStudent .page-top {
      flex-direction: column;
@@ -143,6 +159,9 @@
      flex-direction: column;
      align-items: start !important;
    }
+   .RegisterStudent .super-fields {
+   flex-direction: column;
+  }
  }
 
 

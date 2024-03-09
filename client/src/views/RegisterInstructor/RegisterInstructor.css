@@ -34,6 +34,7 @@
 }
 .RegisterInstructor .suggest{
     text-align: center;
+    width: 100%;
 }
 .RegisterInstructor .suggest a{
     color: var(--blue);
@@ -127,6 +128,7 @@
  @media (max-width: 991px) {
    .RegisterInstructor form{
      flex-direction: column;
+     width: 100%;
     }
     .RegisterInstructor .page-top {
      flex-direction: column;

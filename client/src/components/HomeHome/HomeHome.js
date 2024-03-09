@@ -14,7 +14,7 @@ const HomeHome = () => (
     top: 0,
     width: '100%',
     height: '100vh',
-    position: 'relative',
+    position: 'fixed',
   }}>
   <div class="header top-1">
          <div class="title">
@@ -59,11 +59,11 @@ const HomeHome = () => (
           Explore our platform to access the best course management tools. Learn, grow, and excel with our courses. 
           </div>
           <div class="buttons">
-              <button class="primary">
               <Link className="btt violet"  to={"/register_instructor"}>
+              <button class="primary">
                        GET STARTED NOW! 
-              </Link>
                 </button>
+              </Link>
           </div>
       </div>
 </div>

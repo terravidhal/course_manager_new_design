@@ -235,7 +235,7 @@ toggle.onclick = function () {
                         <span class="icon">
                         <ion-icon name="logo-ionitron"></ion-icon>
                         </span>
-                        {/* <span class="title orange-color">Course<ion-icon name="logo-react"></ion-icon>Compass</span> */}
+                        <span class="title orange-color">welcome{" "+userObjs.name}</span>
                     </a>
                 </li>
                 <li className="crs">

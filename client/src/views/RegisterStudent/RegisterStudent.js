@@ -68,6 +68,9 @@ const RegisterStudent = (props)=>{
     }}>
       <div className="page-top">
          <h2>Register Student</h2>
+         <Link to="/home">
+         <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
+         </Link>
       </div>
       
 
@@ -142,10 +145,13 @@ const RegisterStudent = (props)=>{
         </div>
         </div>
         <button type="submit">Register Me</button>
-        <p className="suggest">you have  account ?&nbsp; 
+        <p className="suggest">Already have an account ?&nbsp; 
         <Link to="/login_page">
              login 
-        </Link>
+        </Link> Or You are a Instructor ?&nbsp; 
+        <Link to="/register_instructor">
+                Register instructor
+         </Link>
         </p>
       </form>
     </div>

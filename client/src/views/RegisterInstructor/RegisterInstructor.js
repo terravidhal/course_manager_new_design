@@ -70,6 +70,9 @@ const RegisterInstructor = (props)=>{
     }}>
       <div className="page-top">
          <h2>Register instuctor</h2>
+         <Link to="/home">
+         <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
+         </Link>
       </div>
       {
         confirmReg?
@@ -114,10 +117,13 @@ const RegisterInstructor = (props)=>{
           <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={(e)=> handleChange(e)}/>
         </div>
         <button type="submit">Register Me</button>
-        <p className="suggest">you have  account ?&nbsp; 
+        <p className="suggest">Already have an account ?&nbsp; 
         <Link to="/login_page">
              login 
-        </Link>
+        </Link> Or You are a Student ?&nbsp; 
+        <Link to="/register_student">
+                Register student
+         </Link>
         </p>
       </form>
     </div>

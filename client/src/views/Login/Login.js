@@ -119,6 +119,9 @@ const Login = (props)=>{
     }}>
       <div className="page-top">
          <h2>Login</h2>
+         <Link to="/home">
+         <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
+         </Link>
       </div>
 
       
