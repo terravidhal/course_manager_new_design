@@ -9,8 +9,7 @@ const UpdatePageInsructor = (props)=>{
     const [confirmReg, setConfirmReg] = useState("");
     const [errs, setErrs] = useState({});
     const navigate = useNavigate();
-    const [loaded, setLoaded] = useState(false); // check if the data is available
-
+    const [loaded, setLoaded] = useState(false); 
     const [user, setUser] = useState({
       name: "",
       email: "",
@@ -22,7 +21,7 @@ const UpdatePageInsructor = (props)=>{
     const handleChange = (e)=>{
       setUser({
         ...user,
-        [e.target.name]: e.target.value // e.target.name => recupere la valeur du champ "name" de l'input
+        [e.target.name]: e.target.value 
       })
     }
 
@@ -32,7 +31,6 @@ const UpdatePageInsructor = (props)=>{
       .get("http://localhost:8000/api/instructors/" + id,{withCredentials: true})
       .then((res) => {
         console.log("u++++++++++",res.data.oneSingleInstructor);
-      //  setInstructorObj(res.data.oneSingleInstructor);
         setUser({
           name: res.data.oneSingleInstructor.name,
           email: res.data.oneSingleInstructor.email,
@@ -40,12 +38,11 @@ const UpdatePageInsructor = (props)=>{
           password: "default",
           confirmPassword: "default"
         });
-        setLoaded(true); // data available => set "true"
-       // console.log("k++++++++++",user.name);
+        setLoaded(true); 
       })
       .catch((err) => console.log(err));
       
-    }, [id]); // updating "user" based on "id"
+    }, [id]); 
 
 
     const updateInstructor = (e) =>{
@@ -85,14 +82,11 @@ const UpdatePageInsructor = (props)=>{
         <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
         </Link>
       </div>
-     
-      
       {
         confirmReg?
         <h1 style={{color: "grey"}}>{confirmReg}</h1>
         :null
       }
-
       {loaded === true ? 
       <form onSubmit={updateInstructor}>
         <div className="field">

@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   BrowserRouter,
   Routes,
@@ -14,7 +14,6 @@ import AdminDashboard from "./views/AdminDashboard/AdminDashboard";
 import CreatePageCourse from "./views/CreatePageCourse/CreatePageCourse";
 import DetailsPageCourse from "./views/DetailsPageCourse/DetailsPageCourse";
 import Login from "./views/Login/Login";
-//import Cookies from "universal-cookie";
 import RegisterStudent from "./views/RegisterStudent/RegisterStudent";
 import CreatePageStudent from "./views/CreatePageStudent/CreatePageStudent";
 import DetailsPageStudent from "./views/DetailsPageStudent/DetailsPageStudent";
@@ -40,15 +39,6 @@ import HomeHome from "./components/HomeHome/HomeHome";
 
 
 function App() {
-  /*
-  const cookies = new Cookies();
-  const userObjs = cookies.get("USER_OBJ");
-  const userObjRole = cookies.get("USER_OBJ")?.role || '';
-  const userObjIsInstructor = cookies.get("USER_OBJ")?.isInstructor || '';
-  console.log("userObjRole+++++++++", userObjRole);
-  console.log("userObjIsInstructor+++++++++", userObjIsInstructor); */
-
-
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjRole = userObjs.role || 'default';
   const userObjIsInstructor = userObjs.isInstructor || '';

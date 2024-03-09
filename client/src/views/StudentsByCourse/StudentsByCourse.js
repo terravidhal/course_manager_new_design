@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './StudentsByCourse.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-//import Cookies from "universal-cookie";
 
 const StudentsByCourse = () => {
- /* const cookies = new Cookies();
-  const userObjsRole = cookies.get("USER_OBJ").role || '';  */
 
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjsRole = userObjs.role || 'default';
@@ -16,15 +13,11 @@ const StudentsByCourse = () => {
   console.log("userObjsId+++++++++", userObjsId);
 
 
-
   const [StudByCourse, setStudByCourse] = useState([]);
   const {id} = useParams(); 
   const navigate = useNavigate();
-  const [loaded, setLoaded] = useState(false); // check if the data is available
+  const [loaded, setLoaded] = useState(false); e
 
-  
-  
-  
   
   useEffect(() => {
     axios.get("http://localhost:8000/api/students/course/" + id,{withCredentials: true})
@@ -32,14 +25,11 @@ const StudentsByCourse = () => {
           console.log("u++++++++++",res);
           console.log("p++++++++++",res.data.students);
           setStudByCourse(res.data.students)
-          setLoaded(true); // data available => set "true"
+          setLoaded(true); 
           console.log("y++++++++++StudByCourse",StudByCourse);
         })
         .catch( err => console.log(err) );
   }, [id]); 
-
-
-
 
 
  
@@ -57,8 +47,6 @@ const StudentsByCourse = () => {
             </Link>
         }
       </div>  
-        
-      
       <div className="page-content">
       <div className="details-img">
           <img src="/assets/images/OIG1.jfif" alt="" />

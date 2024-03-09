@@ -8,7 +8,6 @@ import './WaitVerification.css';
 const WaitVerification = () => {
   const navigate = useNavigate();
 
-
   const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
   const userObjsRole = userObjs.role || 'default';
   const userObjsId = userObjs._id || 'default';
@@ -16,8 +15,6 @@ const WaitVerification = () => {
   console.log("userObjRole+++++++++", userObjsRole);
   console.log("userObjsId+++++++++", userObjsId);
 
-  
- 
  
   const logout = (event) =>{
     event.preventDefault();
