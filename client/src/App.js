@@ -26,11 +26,10 @@ import InstructorByCourse from "./views/InstructorByCourse/InstructorByCourse";
 import InstructorDashboard from "./views/InstructorDashboard/InstructorDashboard";
 import WaitVerification from "./views/WaitVerification/WaitVerification";
 import StudentDashboard from "./views/StudentDashboard/StudentDashboard";
-import LoginAdmin from "./views/LoginAdmin/LoginAdmin";
 import RegisterAdmin from "./views/RegisterAdmin/RegisterAdmin";
 import RegisterInstructor from "./views/RegisterInstructor/RegisterInstructor";
 import UpdatePageCourse from "./views/UpdatePageCourse/UpdatePageCourse";
-import HomeHome from "./components/HomeHome/HomeHome";
+import HomeHome from "./views/HomeHome/HomeHome";
 
 
 
@@ -52,7 +51,6 @@ function App() {
 
   return (
     <div className="App">
-       {/* <h1>Favorite courses</h1> */}
        <BrowserRouter>
          <Routes>
            { userObjRole === 'admin' ?
@@ -82,7 +80,6 @@ function App() {
                <Route path="/students/:id" element={<Navigate replace to="/student-dashboard" />}/>
                <Route path="/instructors/:id" element={<Navigate replace to="/student-dashboard" />}/>
                <Route path="/route/regist/loaded25"element={<Navigate replace to="/student-dashboard" />}/>
-               {/* <Route path="/route/log/loaded25" element={<Navigate replace to="/student-dashboard" />}/> */}
                <Route path="*" element={<Navigate replace to="/student-dashboard" />} />
                </>
               :
@@ -100,7 +97,6 @@ function App() {
                  <Route path="/instructors/:id" element={<Navigate replace to="/instructor-dashboard" />}/>
                  <Route path="/wait-verification" element={<Navigate replace to="/instructor-dashboard" />} />
                  <Route path="/route/regist/loaded25"element={<Navigate replace to="/instructor-dashboard" />}/>
-                 {/* <Route path="/route/log/loaded25" element={<Navigate replace to="/instructor-dashboard" />}/> */}
                  <Route path="*" element={<Navigate replace to="/instructor-dashboard" />} />
                 </>
                  : 
@@ -117,7 +113,6 @@ function App() {
                  <Route path="/students/:id" element={<Navigate replace to="/wait-verification" />}/>
                  <Route path="/instructors/:id" element={<Navigate replace to="/wait-verification" />}/>
                  <Route path="/route/regist/loaded25"element={<Navigate replace to="/wait-verification" />}/>
-                 {/* <Route path="/route/log/loaded25" element={<Navigate replace to="/wait-verification" />}/> */}
                  <Route path="*" element={<Navigate replace to="/wait-verification" />} />
                  </>
                  : null
@@ -145,7 +140,6 @@ function App() {
            <Route path="/students/:id" element={<DetailsPageStudent />}/>
            <Route path="/instructors/:id" element={<DetailsPageInsructor />}/>
            <Route path="/route/regist/loaded25" element={<RegisterAdmin />}/>
-           {/* <Route path="/route/log/loaded25" element={<LoginAdmin />}/> */}
          </Routes>
        </BrowserRouter>
     </div>

@@ -27,10 +27,10 @@
 }
 .CourseForm label {
   font-weight: bold;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .CourseForm .studPpties {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .CourseForm .field.stud-lab {
   border: 1px solid gray;
@@ -58,7 +58,7 @@
 
   width: 100%;
   padding: 8px 0;
-  background-color: var(--blue);
+  background-color: var(--color-theme);
   outline: none;
   border: 0px;
   font-weight: bold;
@@ -72,7 +72,7 @@
   align-items: center;
 }
 .CourseForm .submit_btn.active {
-  background-color: var(--blue);
+  background-color: var(--color-theme);
   color: white;
   opacity: 1;
   cursor: pointer;

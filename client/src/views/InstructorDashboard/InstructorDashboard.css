@@ -2,8 +2,8 @@
   position: fixed;
   width: 300px;
   height: 100%;
-  background: var(--blue);
-  border-left: 5px solid var(--blue);
+  background: var(--color-theme);
+  border-left: 5px solid var(--color-theme);
   transition: 0.5s;
   overflow: hidden;
 }
@@ -32,7 +32,7 @@
 
 .InstructorDashboard .navigation ul li,
 .InstructorDashboard .navigation ul li.hovered {
-  background-color: var(--blue);
+  background-color: var(--color-theme);
 }
 
 .InstructorDashboard .navigation ul li.terra {
@@ -59,7 +59,7 @@
 }
 
 .InstructorDashboard .navigation ul li.terra a {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 
 .InstructorDashboard .navigation ul li a .icon {
@@ -189,7 +189,7 @@
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 
 .InstructorDashboard .cardBox .card .cardName {
@@ -204,7 +204,7 @@
 }
 
 .InstructorDashboard .cardBox .card:hover {
-  background: var(--blue);
+  background: var(--color-theme);
 }
 .InstructorDashboard .cardBox .card:hover .numbers,
 .InstructorDashboard .cardBox .card:hover .cardName,
@@ -236,12 +236,12 @@
 }
 .InstructorDashboard .cardHeader h2 {
   font-weight: 600;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .InstructorDashboard .cardHeader .btn {
   position: relative;
   padding: 5px 10px;
-  background: var(--blue);
+  background: var(--color-theme);
   text-decoration: none;
   color: var(--white);
   border-radius: 6px;
@@ -306,7 +306,7 @@
 }
 .InstructorDashboard .status.inProgress {
   padding: 2px 4px;
-  background: var(--blue);
+  background: var(--color-theme);
   color: var(--white);
   border-radius: 4px;
   font-size: 14px;

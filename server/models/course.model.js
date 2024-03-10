@@ -1,37 +1,39 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
 
 const CourseSchema = new mongoose.Schema(
   {
-     name: {
-       type: String,
-       required: [true, "A Course name is required"],
-       minlength: [3, "A Course name must be atleast three characters long"],
-       maxlength: [20, "The name of a meal must have a maximum of twenty characters"],
-     },
-     level: {
+    name: {
+      type: String,
+      required: [true, "A Course name is required"],
+      minlength: [3, "A Course name must be atleast three characters long"],
+      maxlength: [
+        20,
+        "The name of a meal must have a maximum of twenty characters",
+      ],
+    },
+    level: {
       type: Number,
       required: [true, "A level is required"],
       min: [1, "level must be a minimum of 1"],
       max: [5, "level should be no more than 5"],
-     },
-     field: {
+    },
+    field: {
       type: String,
-      enum: ['Web developement', 'data analyst', 'ux design'],
+      enum: ["Web developement", "data analyst", "ux design"],
       default: "Web developement",
       required: [true, "A field is required"],
     },
-     description: {
-       type: String,
-       required: [true, "A description is required"],
-       minlength: [10, "description must be at least 10 characters long"],
-     },
-     instructor: {
-       type: mongoose.Schema.Types.ObjectId,
-       ref: 'Instructor',
-       required: [true, "A instructor is required"],
-     },
-     dayOfWeek: {
+    description: {
+      type: String,
+      required: [true, "A description is required"],
+      minlength: [10, "description must be at least 10 characters long"],
+    },
+    instructor: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Instructor",
+      required: [true, "A instructor is required"],
+    },
+    dayOfWeek: {
       type: String,
       required: [true, "A dayOfWeek is required"],
       validate: {
@@ -45,13 +47,13 @@ const CourseSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ['pending', 'resolved'],
+      enum: ["pending", "resolved"],
       default: "pending",
       required: [true, "status is required"],
     },
     typeOfCourse: {
       type: String,
-      enum: ['presential', 'online'],
+      enum: ["presential", "online"],
       default: "presential",
       required: [true, "typeOfCourse is required"],
     },
@@ -61,58 +63,30 @@ const CourseSchema = new mongoose.Schema(
     documentsLink: {
       type: String,
     },
-     startTime: {
+    startTime: {
       type: String,
       required: [true, "startTime is required"],
-     },
-     endTime: {
+    },
+    endTime: {
       type: String,
       required: [true, "endTime is required"],
-     },
-     duration: {
+    },
+    duration: {
       type: Number,
       required: [true, "A  time is required"],
       min: [30, " time must be a minimum of 30 minutes"],
       max: [240, " time should be no more than 240 minutes."],
-     },
-     students: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Student',
-    }],
+    },
+    students: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student",
+      },
+    ],
   },
   { timestamps: true }
 );
 
+const Course = mongoose.model("Course", CourseSchema);
 
- 
-const Course = mongoose.model('Course', CourseSchema);
- 
 module.exports = Course;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

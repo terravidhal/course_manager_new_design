@@ -8,7 +8,7 @@
   width: 50%;
   margin: 0 auto;
   align-items: center;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterInstructor .page-top a {
   font-size: 1.5rem;
@@ -31,7 +31,7 @@
   width: 100%;
 }
 .RegisterInstructor .suggest a {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 
 .RegisterInstructor form {
@@ -59,10 +59,10 @@
 }
 .RegisterInstructor label {
   font-weight: bold;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterInstructor .studPpties {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterInstructor .field.stud-lab {
   border: 1px solid gray;
@@ -86,7 +86,7 @@
   margin: 5px 0;
   width: 100%;
   padding: 8px 0;
-  background-color: var(--blue);
+  background-color: var(--color-theme);
   outline: none;
   border: 0px;
   font-weight: bold;
@@ -101,7 +101,7 @@
   align-items: center;
 }
 .RegisterInstructor .submit_btn.active {
-  background-color: var(--blue);
+  background-color: var(--color-theme);
   color: white;
   opacity: 1;
   cursor: pointer;

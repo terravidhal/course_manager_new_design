@@ -1,10 +1,10 @@
 :root {
-  --blue: #1eb2a6;
+  --color-theme: #1eb2a6;
   --blue2: #1c71c6;
-  --bluess: #52898b;
+  --green: #52898b;
   --blues: #2a2185;
   --geen: #01221f;
-  --orange: #1c71c6;
+  --blue3: #1c71c6;
   --oranges: #f79623;
   --white: #fff;
   --gray: #f5f5f5;
@@ -28,7 +28,7 @@ body {
 }
 .blue-color {
   font-weight: bold;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .relative {
   position: relative;
@@ -44,8 +44,8 @@ body {
   position: fixed;
   width: 300px;
   height: 100%;
-  background: var(--blue);
-  border-left: 5px solid var(--blue);
+  background: var(--color-theme);
+  border-left: 5px solid var(--color-theme);
   transition: 0.5s;
   overflow: hidden;
 }
@@ -73,7 +73,7 @@ body {
 
 .AdminDashboard .navigation ul li,
 .AdminDashboard .navigation ul li.hovered {
-  background-color: var(--blue);
+  background-color: var(--color-theme);
 }
 
 .AdminDashboard .navigation ul li.terra {
@@ -100,7 +100,7 @@ body {
 }
 
 .AdminDashboard .navigation ul li.terra a {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 
 .AdminDashboard .navigation ul li a .icon {
@@ -230,7 +230,7 @@ body {
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 
 .AdminDashboard .cardBox .card .cardName {
@@ -245,7 +245,7 @@ body {
 }
 
 .AdminDashboard .cardBox .card:hover {
-  background: var(--blue);
+  background: var(--color-theme);
 }
 .AdminDashboard .cardBox .card:hover .numbers,
 .AdminDashboard .cardBox .card:hover .cardName,
@@ -277,12 +277,12 @@ body {
 }
 .AdminDashboard .cardHeader h2 {
   font-weight: 600;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .AdminDashboard .cardHeader .btn {
   position: relative;
   padding: 5px 10px;
-  background: var(--blue);
+  background: var(--color-theme);
   text-decoration: none;
   color: var(--white);
   border-radius: 6px;
@@ -347,7 +347,7 @@ body {
 }
 .AdminDashboard .status.inProgress {
   padding: 2px 4px;
-  background: var(--blue);
+  background: var(--color-theme);
   color: var(--white);
   border-radius: 4px;
   font-size: 14px;

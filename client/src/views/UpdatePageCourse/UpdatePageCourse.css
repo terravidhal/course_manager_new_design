@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .UpdatePageCourse .page-top a {
   font-size: 1.5rem;
@@ -33,5 +33,5 @@
 }
 .UpdatePageCourse li button.Remove {
   color: white;
-  background-color: var(--blue);
+  background-color: var(--color-theme);
 }

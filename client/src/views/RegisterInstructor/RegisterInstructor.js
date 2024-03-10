@@ -51,14 +51,14 @@ const RegisterInstructor = (props)=>{
       })
       .catch((err)=>{
        // console.log(err);
-       // setErrs(err.response.data.errors.errors);
+        setErrs(err.response.data.errors.errors);
         console.log("+++++++++",err);
       })
   };
   
   return(
     <div className="RegisterInstructor" style={{
-      backgroundImage: 'url("./assets/images/bg_2.jpg.webp")',
+      backgroundImage: 'url("/assets/images/bg_2.jpg.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',

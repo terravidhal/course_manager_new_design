@@ -159,7 +159,7 @@ const StudentDashboard = () => {
                 <span class="icon">
                   <ion-icon name="home-outline"></ion-icon>
                 </span>
-                <span class="title">Manage Courses</span>
+                <span class="title">View Courses</span>
               </Link>
             </li>
             <li>

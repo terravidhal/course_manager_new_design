@@ -12,6 +12,13 @@ const Login = (props)=>{
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
+    const userObjs = JSON.parse(localStorage.getItem('USER_OBJ')) || {};
+    const userObjsRole = userObjs.role || 'default';
+    const userObjsId = userObjs._id || 'default';
+    
+    console.log("userObjRole+++++++++", userObjsRole);
+    console.log("userObjsId+++++++++", userObjsId);
+
   
     const login = (event) =>{
       event.preventDefault();
@@ -23,7 +30,6 @@ const Login = (props)=>{
         withCredentials: true,
       })
       .then((res)=>{
-       // console.log("res***************",res);
         console.log("res.data***************",res.data);
        if ( res.data.student) {
            localStorage.setItem('USER_OBJ', JSON.stringify(res.data.student));
@@ -48,7 +54,7 @@ const Login = (props)=>{
       })
       .catch((err)=>{
         console.error("Error logging in:", err);
-        //setErrorMessage(err.response.data.message);
+        setErrorMessage(err.response.data.message);
       })
   };
 
@@ -56,7 +62,7 @@ const Login = (props)=>{
   
   return(
     <div className="Login" style={{
-      backgroundImage: 'url("./assets/images/bg_1.jpg.webp")',
+      backgroundImage: 'url("/assets/images/bg_1.jpg.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
@@ -73,8 +79,8 @@ const Login = (props)=>{
          <ion-icon name="arrow-back-circle-outline"></ion-icon>back to Home
          </Link>
       </div>
-      <p className="error-text">{errorMessage? errorMessage : ""}</p>
       <form onSubmit={login}>
+      <p className="error-text">{errorMessage? errorMessage : ""}</p>
         <div className="field">
           <label>Email</label>
           <input type="text" name="email" value={email} onChange={(e)=> setEmail(e.target.value)}/>

@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .InstructorByCourse .page-top h1 {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .InstructorByCourse .page-content {
   display: flex;
@@ -23,7 +23,7 @@
   border-radius: 5px;
 }
 .InstructorByCourse .fields p span.infos {
-  color: var(--blue);
+  color: var(--color-theme);
   margin-right: 10px;
 }
 .InstructorByCourse .page-top {

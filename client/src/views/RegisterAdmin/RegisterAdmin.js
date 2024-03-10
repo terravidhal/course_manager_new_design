@@ -54,11 +54,21 @@ const RegisterAdmin = (props)=>{
   };
   
   return(
-    <div>
-      <h2>Register admin</h2>
-      <Link to="/route/log/loaded25">
-             login admin
-      </Link>
+    <div  className="RegisterAdmin" style={{
+      backgroundImage: 'url("/assets/images/bg_2.jpg.webp")',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '100vh',
+      position: 'relative',
+      overflowY: 'auto',
+    }}>
+      <div className="page-top">
+         <h2>Register admin</h2>
+      </div>
       {
         confirmReg?
         <h1 style={{color: "grey"}}>{confirmReg}</h1>
@@ -70,7 +80,7 @@ const RegisterAdmin = (props)=>{
         :null
       }
       <form onSubmit={register}>
-        <div>
+        <div className="field">
           <label>name</label>
           {
             errs.name?
@@ -79,7 +89,7 @@ const RegisterAdmin = (props)=>{
           }
           <input type="text" name="name" value={user.name} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Email</label>
           {
             errs.email?
@@ -88,11 +98,11 @@ const RegisterAdmin = (props)=>{
           }
           <input type="email" name="email" value={user.email} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Key Code</label>
           <input type="password" name="keyCode" value={user.keyCode} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Password</label>
           {
             errs.password?
@@ -101,7 +111,7 @@ const RegisterAdmin = (props)=>{
           }
           <input type="password" name="password" value={user.password} onChange={(e)=> handleChange(e)}/>
         </div>
-        <div>
+        <div className="field">
           <label>Confirm Password</label>
           {
             errs.confirmPassword?

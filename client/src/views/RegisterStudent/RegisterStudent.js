@@ -56,7 +56,7 @@ const RegisterStudent = (props)=>{
   
   return(
     <div className="RegisterStudent" style={{
-      backgroundImage: 'url("./assets/images/bg_2.jpg.webp")',
+      backgroundImage: 'url("/assets/images/bg_2.jpg.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',

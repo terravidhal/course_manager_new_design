@@ -7,7 +7,7 @@
 .InstructorTable td.options a,
 .CourseTable td.instruct a {
   font-size: 1.5rem;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .InstructorTable td.options a button {
   border: none;

@@ -8,7 +8,7 @@
   width: 50%;
   margin: 0 auto;
   align-items: center;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterStudent .page-top a {
   font-size: 1.5rem;
@@ -31,7 +31,7 @@
   width: 100%;
 }
 .RegisterStudent .suggest a {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterStudent .super-fields {
   display: flex;
@@ -64,10 +64,10 @@
 }
 .RegisterStudent label {
   font-weight: bold;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterStudent .studPpties {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .RegisterStudent .field.stud-lab {
   border: 1px solid gray;
@@ -92,7 +92,7 @@
   /* width: 70%; */
   width: 100%;
   padding: 8px 0;
-  background-color: var(--blue);
+  background-color: var(--color-theme);
   outline: none;
   border: 0px;
   font-weight: bold;
@@ -107,7 +107,7 @@
   align-items: center;
 }
 .RegisterStudent .submit_btn.active {
-  background-color: var(--blue);
+  background-color: var(--color-theme);
   color: white;
   opacity: 1;
   cursor: pointer;

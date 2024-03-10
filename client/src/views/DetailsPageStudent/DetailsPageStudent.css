@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .DetailsPageStudent .page-top h1 {
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .DetailsPageStudent .page-content {
   display: flex;
@@ -23,7 +23,7 @@
   border-radius: 5px;
 }
 .DetailsPageStudent .fields p span.infos {
-  color: var(--blue);
+  color: var(--color-theme);
   margin-right: 10px;
 }
 .DetailsPageStudent .page-top {

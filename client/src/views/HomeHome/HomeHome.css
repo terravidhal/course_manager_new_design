@@ -31,10 +31,10 @@
   font-weight: bold;
 }
 .HomeHome .header.top-2 ul li.active {
-  color: #1eb2a6;
+  color: var(--color-theme);
 }
 .HomeHome .header.top-1 .title-1:hover {
-  color: #1eb2a6;
+  color: var(--color-theme);
   cursor: pointer;
 }
 .HomeHome .header.top-1 .title-1 {
@@ -72,7 +72,7 @@
   border-radius: 50%;
   margin-right: 4px;
   background: rgba(255, 255, 255, 0.2);
-  color: #1eb2a6;
+  color: var(--color-theme);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,14 +121,14 @@
   padding: 20px;
 }
 .HomeHome .buttons button.primary {
-  background: #1eb2a6 !important;
-  border: 1px solid #1eb2a6 !important;
+  background: var(--color-theme) !important;
+  border: 1px solid var(--color-theme) !important;
   color: #fff !important;
 }
 .HomeHome .buttons button.secondary {
   background: #fff !important;
   border: 1px solid #fff !important;
-  color: #1eb2a6 !important;
+  color: var(--color-theme) !important;
 }
 
 @media (max-width: 991px) {

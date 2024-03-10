@@ -9,7 +9,7 @@
   width: 50%;
   margin: 0 auto;
   align-items: center;
-  color: var(--blue);
+  color: var(--color-theme);
 }
 .WaitVerification .page-top h1{
   
