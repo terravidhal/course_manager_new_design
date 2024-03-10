@@ -3,17 +3,22 @@ const jwt = require("jsonwebtoken");
 
 const InstructorModel = require("../models/instructor.model");
 const UserModel = require("../models/user.model");
+const { main, sendNewInstructorNotification } = require("../notifications/notifications");
+
+
 
 module.exports = {
+  /*
   register: (req, res) => {
     const newInstructor = new InstructorModel(req.body);
 
     newInstructor
       .save()
-      .then((newInstruct) => {
+      .then( async(newInstruct) => {
         const instructorInfo = {
           _id: newInstruct._id,
           name: newInstruct.name,
+          email: newInstruct.email,
           role: "instructor",
           isInstructor: newInstruct.isInstructor,
         };
@@ -32,6 +37,11 @@ module.exports = {
           message: "Successfully logged in",
           instructor: instructorInfo,
         });
+
+       
+        await main(instructorInfo); // Call the main function with data
+        
+
       })
       .catch((err) => {
         if (err.name === "ValidationError") {
@@ -41,6 +51,46 @@ module.exports = {
         }
         res.status(400).json({ message: "Something went wrong", errors: err });
       });
+  }, */
+
+  register: async (req, res) => {
+    try {
+      const newInstructor = new InstructorModel(req.body);
+
+      const savedInstructor = await newInstructor.save();
+
+      const instructorInfo = {
+        _id: savedInstructor._id,
+        name: savedInstructor.name,
+        email: savedInstructor.email,
+        role: "instructor",
+        isInstructor: savedInstructor.isInstructor,
+      };
+
+      const instructorToken = jwt.sign(
+        instructorInfo,
+        process.env.JWT_SECRET
+      );
+
+      const cookieOptions = {
+        httpOnly: true,
+        expires: new Date(Date.now() + 7200000),
+      };
+
+      res.cookie("usertoken", instructorToken, cookieOptions).json({
+        message: "Successfully logged in",
+        instructor: instructorInfo,
+      });
+
+      await sendNewInstructorNotification(instructorInfo); // Call the notification function
+    } catch (err) {
+      if (err.name === "ValidationError") {
+        return res
+          .status(400)
+          .json({ message: "Validation Errors", errors: err });
+      }
+      res.status(400).json({ message: "Something went wrong", errors: err });
+    }
   },
 
   createInstructor: (req, res) => {

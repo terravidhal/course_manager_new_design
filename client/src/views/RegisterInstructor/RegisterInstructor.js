@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./RegisterInstructor.css";
 
 
+
+
 const RegisterInstructor = (props)=>{
     const [confirmReg, setConfirmReg] = useState("");
     const [errs, setErrs] = useState({});
@@ -22,7 +24,8 @@ const RegisterInstructor = (props)=>{
         [e.target.name]: e.target.value 
       })
     }
-  
+
+
 
     const register = e =>{
       e.preventDefault();
@@ -54,7 +57,7 @@ const RegisterInstructor = (props)=>{
         setErrs(err.response.data.errors.errors);
         console.log("+++++++++",err);
       })
-  };
+    };
   
   return(
     <div className="RegisterInstructor" style={{
