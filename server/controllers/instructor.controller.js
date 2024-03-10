@@ -3,56 +3,14 @@ const jwt = require("jsonwebtoken");
 
 const InstructorModel = require("../models/instructor.model");
 const UserModel = require("../models/user.model");
-const { main, sendNewInstructorNotification } = require("../notifications/notifications");
+const {
+  main,
+  sendNewInstructorNotification,
+} = require("../notifications/notifications");
 
 
 
 module.exports = {
-  /*
-  register: (req, res) => {
-    const newInstructor = new InstructorModel(req.body);
-
-    newInstructor
-      .save()
-      .then( async(newInstruct) => {
-        const instructorInfo = {
-          _id: newInstruct._id,
-          name: newInstruct.name,
-          email: newInstruct.email,
-          role: "instructor",
-          isInstructor: newInstruct.isInstructor,
-        };
-
-        const instructorToken = jwt.sign(
-          instructorInfo,
-          process.env.JWT_SECRET
-        );
-
-        const cookieOptions = {
-          httpOnly: true,
-          expires: new Date(Date.now() + 7200000),
-        };
-
-        res.cookie("usertoken", instructorToken, cookieOptions).json({
-          message: "Successfully logged in",
-          instructor: instructorInfo,
-        });
-
-       
-        await main(instructorInfo); // Call the main function with data
-        
-
-      })
-      .catch((err) => {
-        if (err.name === "ValidationError") {
-          return res
-            .status(400)
-            .json({ message: "Validation Errors", errors: err });
-        }
-        res.status(400).json({ message: "Something went wrong", errors: err });
-      });
-  }, */
-
   register: async (req, res) => {
     try {
       const newInstructor = new InstructorModel(req.body);
@@ -67,10 +25,7 @@ module.exports = {
         isInstructor: savedInstructor.isInstructor,
       };
 
-      const instructorToken = jwt.sign(
-        instructorInfo,
-        process.env.JWT_SECRET
-      );
+      const instructorToken = jwt.sign(instructorInfo, process.env.JWT_SECRET);
 
       const cookieOptions = {
         httpOnly: true,
@@ -99,12 +54,10 @@ module.exports = {
     newInstructor
       .save()
       .then((newInstructor) => {
-        res
-          .status(201)
-          .json({
-            message: "Instructor successfully created",
-            instructor: newInstructor,
-          });
+        res.status(201).json({
+          message: "Instructor successfully created",
+          instructor: newInstructor,
+        });
       })
       .catch((err) => {
         if (err.name === "ValidationError") {
@@ -133,12 +86,10 @@ module.exports = {
         if (!updatedInstructor) {
           return res.status(404).json({ message: "instructeur introuvable" });
         }
-        res
-          .status(200)
-          .json({
-            message: "instructeur mis à jour avec succès",
-            instructor: updatedInstructor,
-          });
+        res.status(200).json({
+          message: "instructeur mis à jour avec succès",
+          instructor: updatedInstructor,
+        });
       })
       .catch((err) => {
         if (err.name === "ValidationError") {
